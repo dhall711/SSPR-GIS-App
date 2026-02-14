@@ -32,7 +32,7 @@ function parseMessageContent(
       <button
         key={key++}
         onClick={() => onFeatureClick(featureId)}
-        className="text-trail-water hover:text-trail-green underline decoration-dotted underline-offset-2 font-medium transition-colors"
+        className="text-green-700 hover:text-green-900 underline decoration-dotted underline-offset-2 font-semibold transition-colors"
         title="Click to highlight on map"
       >
         {displayName}
@@ -161,9 +161,9 @@ export function ChatWidget({
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
         {messages.length === 0 && (
-          <div className="text-center text-gray-500 mt-8">
+          <div className="text-center text-gray-600 mt-8">
             <p className="text-lg mb-2">
               Hey! I&apos;m your GIS Field Coach.
             </p>
@@ -181,7 +181,7 @@ export function ChatWidget({
                 <button
                   key={suggestion}
                   onClick={() => setInput(suggestion)}
-                  className="block w-full text-left px-3 py-2 bg-white rounded-lg text-sm hover:bg-gray-100 transition-colors"
+                  className="block w-full text-left px-3 py-2 bg-gray-50 rounded-lg text-sm text-gray-700 hover:bg-gray-100 transition-colors border border-gray-200"
                 >
                   &ldquo;{suggestion}&rdquo;
                 </button>
@@ -198,17 +198,19 @@ export function ChatWidget({
             }`}
           >
             <div
-              className={`max-w-[85%] rounded-lg px-4 py-2.5 ${
+              className={`max-w-[85%] rounded-lg px-4 py-3 ${
                 msg.role === "user"
                   ? "bg-trail-green text-white"
-                  : "bg-white shadow-sm border border-gray-100"
+                  : "bg-white shadow-sm border border-gray-200 text-gray-900"
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap leading-relaxed">
+              <div className={`text-sm whitespace-pre-wrap leading-relaxed ${
+                msg.role === "assistant" ? "text-gray-800" : ""
+              }`}>
                 {msg.role === "assistant"
                   ? parseMessageContent(msg.content, handleFeatureClick)
                   : msg.content}
-              </p>
+              </div>
             </div>
           </div>
         ))}

@@ -5,8 +5,8 @@
       "type": "Feature",
       "properties": {
         "id": "mi-001",
-        "trailId": "bear-creek",
-        "parkId": null,
+        "trailId": "columbine",
+        "parkId": "cook-creek-pool",
         "category": "erosion",
         "severity": "high",
         "status": "reported",
@@ -21,14 +21,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0170, 39.6430] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.058176,
+          39.571333
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-002",
-        "trailId": "bear-creek",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "taos-open-space",
         "category": "graffiti",
         "severity": "medium",
         "status": "assigned",
@@ -43,14 +49,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0250, 39.6440] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.902652,
+          39.542244
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-003",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": "willow-creek",
+        "parkId": "kimmer-plaza",
         "category": "trail_surface",
         "severity": "medium",
         "status": "reported",
@@ -65,7 +77,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0060, 39.6200] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.889912,
+          39.565827
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -87,7 +105,13 @@
         "fieldNotes": "Applied ice melt on 2/7, need to recheck. Drainage issue causing refreeze.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0080, 39.6100] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.039676,
+          39.568283
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -109,14 +133,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9920, 39.5860] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.992,
+          39.586
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-006",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "province-center-park",
         "category": "trash_dumping",
         "severity": "medium",
         "status": "reported",
@@ -131,13 +161,19 @@
         "fieldNotes": "Spotted during morning patrol. Will need truck access for removal.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0130, 39.5920] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.951639,
+          39.568911
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-007",
-        "trailId": "highline-canal",
+        "trailId": "big-dry-creek-south",
         "parkId": null,
         "category": "vegetation",
         "severity": "low",
@@ -153,13 +189,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9650, 39.6180] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.945409,
+          39.577847
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-008",
-        "trailId": "willow-creek",
+        "trailId": "cook-creek",
         "parkId": null,
         "category": "erosion",
         "severity": "critical",
@@ -175,7 +217,13 @@
         "fieldNotes": "Placed barricades on 2/7. Need engineering assessment for culvert repair.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9900, 39.5720] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.899618,
+          39.547186
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -197,7 +245,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9750, 39.5910] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.975,
+          39.591
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -219,14 +273,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9530, 39.5950] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.953,
+          39.595
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-011",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": "columbine",
+        "parkId": "centennial-ridge-park",
         "category": "safety",
         "severity": "high",
         "status": "assigned",
@@ -241,14 +301,20 @@
         "fieldNotes": "Drain is clogged with sediment. Scheduled for vacuum truck.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0055, 39.6300] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.053243,
+          39.575464
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-012",
-        "trailId": "big-dry-creek-north",
-        "parkId": null,
+        "trailId": "cook-creek",
+        "parkId": "laquinta-park",
         "category": "graffiti",
         "severity": "low",
         "status": "reported",
@@ -263,13 +329,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0080, 39.6050] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.900354,
+          39.548181
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-013",
-        "trailId": null,
+        "trailId": "highline-canal",
         "parkId": "hudson-gardens",
         "category": "snow_ice",
         "severity": "medium",
@@ -285,13 +357,19 @@
         "fieldNotes": "Salt applied. Recurring issue -- needs better drainage or mat system.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0160, 39.6150] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014478,
+          39.565398
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-014",
-        "trailId": "lee-gulch",
+        "trailId": "willow-creek",
         "parkId": null,
         "category": "trail_surface",
         "severity": "medium",
@@ -307,14 +385,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9810, 39.5640] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.884599,
+          39.543839
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-015",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "taos-open-space",
         "category": "erosion",
         "severity": "high",
         "status": "reported",
@@ -329,13 +413,19 @@
         "fieldNotes": "Very concerning. Upstream development increasing runoff velocity. Engineering needs to assess.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0100, 39.5840] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.900083,
+          39.541727
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-016",
-        "trailId": null,
+        "trailId": "columbine",
         "parkId": "south-platte-park",
         "category": "trash_dumping",
         "severity": "high",
@@ -351,13 +441,19 @@
         "fieldNotes": "Major cleanup needed. Truck access via service road from Santa Fe. Estimate 2 tons of debris.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0120, 39.5780] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.053299,
+          39.577718
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-017",
-        "trailId": "highline-canal",
+        "trailId": "cook-creek",
         "parkId": null,
         "category": "vegetation",
         "severity": "medium",
@@ -373,7 +469,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9580, 39.6240] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.89088,
+          39.551369
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -395,13 +497,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9630, 39.5880] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.963,
+          39.588
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-019",
-        "trailId": "little-dry-creek",
+        "trailId": "lee-gulch",
         "parkId": null,
         "category": "erosion",
         "severity": "medium",
@@ -417,13 +525,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9880, 39.5560] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.974742,
+          39.569978
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-020",
-        "trailId": "highline-canal",
+        "trailId": "columbine",
         "parkId": null,
         "category": "graffiti",
         "severity": "medium",
@@ -439,14 +553,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9600, 39.6380] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.056046,
+          39.574082
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-021",
-        "trailId": null,
-        "parkId": "ben-franklin-pool",
+        "trailId": "lee-gulch",
+        "parkId": "fairways-at-lone-tree",
         "category": "infrastructure",
         "severity": "high",
         "status": "reported",
@@ -461,13 +581,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0010, 39.5980] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.972687,
+          39.569779
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-022",
-        "trailId": "columbine",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "snow_ice",
         "severity": "medium",
@@ -483,14 +609,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9720, 39.5940] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.901096,
+          39.522372
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-023",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "province-center-park",
         "category": "signage",
         "severity": "low",
         "status": "reported",
@@ -505,13 +637,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0070, 39.6260] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.950614,
+          39.56937
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-024",
-        "trailId": "mary-carter-greenway",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "safety",
         "severity": "critical",
@@ -527,13 +665,19 @@
         "fieldNotes": "Coned off 6ft radius. Subsurface pipe likely compromised. Engineering notified.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0090, 39.5960] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.888273,
+          39.525494
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-025",
-        "trailId": "lee-gulch",
+        "trailId": "highline-canal",
         "parkId": null,
         "category": "vegetation",
         "severity": "low",
@@ -549,13 +693,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9780, 39.5620] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995904,
+          39.562072
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-026",
-        "trailId": "big-dry-creek-south",
+        "trailId": "highline-canal",
         "parkId": null,
         "category": "trail_surface",
         "severity": "high",
@@ -571,13 +721,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0020, 39.5880] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014838,
+          39.564133
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-027",
-        "trailId": null,
+        "trailId": "big-dry-creek-south",
         "parkId": "douglas-h-buck-recreation-center",
         "category": "graffiti",
         "severity": "medium",
@@ -593,13 +749,19 @@
         "fieldNotes": "Same tags as the ones on the underpass last month. Recurring vandal.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9850, 39.5700] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943549,
+          39.577518
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-028",
-        "trailId": "bear-creek",
+        "trailId": "columbine",
         "parkId": null,
         "category": "erosion",
         "severity": "medium",
@@ -615,14 +777,20 @@
         "fieldNotes": "Install check dams before spring rains. Will get worse fast.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0130, 39.6425] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.054575,
+          39.574231
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-029",
-        "trailId": null,
-        "parkId": "centennial-ridge-park",
+        "trailId": "big-dry-creek-south",
+        "parkId": "park-at-lone-tree-elementary-school",
         "category": "infrastructure",
         "severity": "low",
         "status": "reported",
@@ -637,7 +805,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9950, 39.5830] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.944742,
+          39.579117
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -659,13 +833,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9620, 39.6200] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.02906,
+          39.560407
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-031",
-        "trailId": "mary-carter-greenway",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "erosion",
         "severity": "high",
@@ -681,14 +861,20 @@
         "fieldNotes": "Energy dissipater is gone. Need riprap and possibly a new apron. Contact engineering.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0050, 39.6180] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.898986,
+          39.522419
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-032",
-        "trailId": null,
-        "parkId": "littleton-golf-and-tennis-club",
+        "trailId": "big-dry-creek-south",
+        "parkId": "sweetwater-trail",
         "category": "parking_lot",
         "severity": "medium",
         "status": "reported",
@@ -703,13 +889,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0200, 39.6130] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943093,
+          39.579199
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-033",
-        "trailId": "willow-creek",
+        "trailId": "cook-creek",
         "parkId": null,
         "category": "signage",
         "severity": "medium",
@@ -725,13 +917,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9870, 39.5750] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.89043,
+          39.551302
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-034",
-        "trailId": "highline-canal",
+        "trailId": "mary-carter-greenway",
         "parkId": null,
         "category": "snow_ice",
         "severity": "high",
@@ -747,14 +945,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9540, 39.6280] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.040633,
+          39.567596
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-035",
-        "trailId": null,
-        "parkId": "carson-nature-center",
+        "trailId": "happy-canyon",
+        "parkId": "tennis-center-and-park-at-lone-tree-golf-course",
         "category": "infrastructure",
         "severity": "medium",
         "status": "in_progress",
@@ -769,7 +973,13 @@
         "fieldNotes": "Bolts need replacing -- wood has swelled and cracked around the originals. Parts ordered.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0139, 39.5963] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.897112,
+          39.525621
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -791,14 +1001,20 @@
         "fieldNotes": "Cleaned with graffiti remover. Sign in good condition otherwise.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0135, 39.5950] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0135,
+          39.595
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-037",
-        "trailId": "bear-creek",
-        "parkId": null,
+        "trailId": "cook-creek",
+        "parkId": "belvedere-park",
         "category": "trail_surface",
         "severity": "low",
         "status": "resolved",
@@ -813,14 +1029,20 @@
         "fieldNotes": "Cut a drainage channel to divert water off the trail surface. Monitor for effectiveness.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0210, 39.6435] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.892741,
+          39.551573
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-038",
-        "trailId": "columbine",
-        "parkId": null,
+        "trailId": "happy-canyon",
+        "parkId": "fairways-at-lone-tree",
         "category": "vegetation",
         "severity": "high",
         "status": "reported",
@@ -835,13 +1057,19 @@
         "fieldNotes": "Needs arborist assessment. Possible Dutch elm disease. Mark for priority removal.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9760, 39.5890] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.888313,
+          39.525726
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-039",
-        "trailId": "mary-carter-greenway",
+        "trailId": "lee-gulch",
         "parkId": null,
         "category": "trash_dumping",
         "severity": "low",
@@ -857,7 +1085,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0075, 39.6080] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.974651,
+          39.569926
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -879,14 +1113,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9700, 39.5760] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.97,
+          39.576
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-041",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "province-center-park",
         "category": "erosion",
         "severity": "medium",
         "status": "reported",
@@ -901,14 +1141,20 @@
         "fieldNotes": "Scour hole approximately 18 inches deep. Document with photos for engineering report.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0110, 39.5900] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.951356,
+          39.570328
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-042",
-        "trailId": "big-dry-creek-north",
-        "parkId": null,
+        "trailId": "cook-creek",
+        "parkId": "maximus-trail-park",
         "category": "safety",
         "severity": "medium",
         "status": "reported",
@@ -923,14 +1169,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0100, 39.6080] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.899078,
+          39.548894
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-043",
         "trailId": "highline-canal",
-        "parkId": null,
+        "parkId": "hogback-hill-park",
         "category": "erosion",
         "severity": "low",
         "status": "reported",
@@ -945,7 +1197,13 @@
         "fieldNotes": "Monitor through spring. If slump accelerates, will need retaining structure.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9600, 39.6220] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.028659,
+          39.559724
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -967,7 +1225,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9800, 39.5650] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.98,
+          39.565
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -989,14 +1253,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9860, 39.5540] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.986,
+          39.554
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-046",
-        "trailId": "highline-canal",
-        "parkId": null,
+        "trailId": "happy-canyon",
+        "parkId": "willow-creek-greenbelt",
         "category": "trail_surface",
         "severity": "medium",
         "status": "reported",
@@ -1011,14 +1281,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9570, 39.6350] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.885315,
+          39.528267
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-047",
-        "trailId": null,
-        "parkId": "south-suburban-golf-course",
+        "trailId": "willow-creek",
+        "parkId": "south-suburban-sports-complex",
         "category": "infrastructure",
         "severity": "low",
         "status": "reported",
@@ -1033,13 +1309,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9950, 39.5680] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.887789,
+          39.566513
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-048",
-        "trailId": "mary-carter-greenway",
+        "trailId": "willow-creek",
         "parkId": null,
         "category": "vegetation",
         "severity": "medium",
@@ -1055,7 +1337,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0095, 39.5870] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.893058,
+          39.552394
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1077,13 +1365,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0020, 39.5940] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.002,
+          39.594
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-050",
-        "trailId": "lee-gulch",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "erosion",
         "severity": "high",
@@ -1099,14 +1393,20 @@
         "fieldNotes": "Need grade control structure before spring runoff. This is accelerating.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9790, 39.5660] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.891068,
+          39.529382
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-051",
-        "trailId": "bear-creek",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "south-suburban-sports-complex",
         "category": "safety",
         "severity": "high",
         "status": "assigned",
@@ -1121,13 +1421,19 @@
         "fieldNotes": "Posted warning signs. Attempting to get structural engineer out this week.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0100, 39.6418] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943381,
+          39.564393
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-052",
-        "trailId": "highline-canal",
+        "trailId": "cook-creek",
         "parkId": null,
         "category": "graffiti",
         "severity": "low",
@@ -1143,7 +1449,13 @@
         "fieldNotes": "Removed with heat gun and adhesive remover.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9410, 39.6310] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.898789,
+          39.548431
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1165,14 +1477,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9730, 39.5920] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.973,
+          39.592
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-054",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": "highline-canal",
+        "parkId": "southpark-pickleball-complex",
         "category": "snow_ice",
         "severity": "low",
         "status": "resolved",
@@ -1187,7 +1505,13 @@
         "fieldNotes": "Cleared snow and applied ice melt at the junction.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0070, 39.6020] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.004486,
+          39.564081
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1209,14 +1533,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0010, 39.5860] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.001,
+          39.586
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-056",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "centennial-ridge-park",
         "category": "signage",
         "severity": "medium",
         "status": "reported",
@@ -1231,14 +1561,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0065, 39.6160] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.90762,
+          39.54595
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-057",
-        "trailId": null,
-        "parkId": "ketring-park",
+        "trailId": "cook-creek",
+        "parkId": "trailmark-park",
         "category": "safety",
         "severity": "critical",
         "status": "in_progress",
@@ -1253,13 +1589,19 @@
         "fieldNotes": "Circuit breaker tripped to de-energize. Electrician needed. Taped area off with caution tape.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0170, 39.6100] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.900551,
+          39.551651
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-058",
-        "trailId": "highline-canal",
+        "trailId": "cook-creek",
         "parkId": null,
         "category": "trail_surface",
         "severity": "low",
@@ -1275,14 +1617,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9560, 39.6300] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.900752,
+          39.549479
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-059",
-        "trailId": "willow-creek",
-        "parkId": null,
+        "trailId": "happy-canyon",
+        "parkId": "fairways-at-lone-tree",
         "category": "trash_dumping",
         "severity": "low",
         "status": "reported",
@@ -1297,14 +1645,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9880, 39.5740] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.892821,
+          39.527396
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-060",
         "trailId": null,
-        "parkId": null,
+        "parkId": "willow-creek-greenbelt",
         "category": "infrastructure",
         "severity": "low",
         "status": "resolved",
@@ -1319,13 +1673,19 @@
         "fieldNotes": "Welded and reinforced the leg. Table is stable.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9580, 39.6190] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9068,
+          39.566832
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-061",
-        "trailId": "mary-carter-greenway",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "graffiti",
         "severity": "high",
@@ -1341,7 +1701,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0068, 39.6250] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.899569,
+          39.524361
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1363,13 +1729,19 @@
         "fieldNotes": "Consider installing a barrier and restoration planting. Social trail is well-worn -- won't stop on its own.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0140, 39.5800] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014,
+          39.58
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-063",
-        "trailId": "bear-creek",
+        "trailId": "willow-creek",
         "parkId": null,
         "category": "parking_lot",
         "severity": "medium",
@@ -1385,14 +1757,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0245, 39.6438] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.890726,
+          39.550944
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-064",
-        "trailId": "little-dry-creek",
-        "parkId": null,
+        "trailId": null,
+        "parkId": "lone-tree-recreation-center",
         "category": "signage",
         "severity": "low",
         "status": "reported",
@@ -1407,14 +1785,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9870, 39.5580] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.888369,
+          39.542667
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-065",
-        "trailId": "mary-carter-greenway",
-        "parkId": null,
+        "trailId": "railroad-spur",
+        "parkId": "cook-creek-pool",
         "category": "infrastructure",
         "severity": "high",
         "status": "reported",
@@ -1429,13 +1813,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0105, 39.5880] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.02764,
+          39.580132
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-066",
-        "trailId": null,
+        "trailId": "big-dry-creek-south",
         "parkId": "family-sports-center",
         "category": "parking_lot",
         "severity": "low",
@@ -1451,14 +1841,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9380, 39.6410] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943832,
+          39.576626
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-067",
-        "trailId": "highline-canal",
-        "parkId": null,
+        "trailId": "happy-canyon",
+        "parkId": "wildcat-ridge-trails",
         "category": "snow_ice",
         "severity": "medium",
         "status": "resolved",
@@ -1473,13 +1869,19 @@
         "fieldNotes": "Patched with cold asphalt. Notified road maintenance about plow alignment.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9580, 39.6360] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.890523,
+          39.528902
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-068",
-        "trailId": "highline-canal",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "trail_surface",
         "severity": "medium",
@@ -1495,7 +1897,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9550, 39.6260] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.887561,
+          39.526199
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1517,13 +1925,19 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9680, 39.5810] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.968,
+          39.581
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-070",
-        "trailId": "columbine",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "erosion",
         "severity": "medium",
@@ -1539,13 +1953,19 @@
         "fieldNotes": "Trail grade is concentrating flow. Need water bars or cross-cut drains.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9770, 39.5870] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.901606,
+          39.525122
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-071",
-        "trailId": "mary-carter-greenway",
+        "trailId": "happy-canyon",
         "parkId": null,
         "category": "safety",
         "severity": "low",
@@ -1561,7 +1981,13 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0060, 39.6140] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.892992,
+          39.527728
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -1583,14 +2009,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9900, 39.5790] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.99,
+          39.579
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-073",
-        "trailId": "big-dry-creek-north",
-        "parkId": null,
+        "trailId": "happy-canyon",
+        "parkId": "park-at-lone-tree-elementary-school",
         "category": "trash_dumping",
         "severity": "medium",
         "status": "reported",
@@ -1605,13 +2037,19 @@
         "fieldNotes": "Coordinated with social services before cleanup. Will schedule removal after outreach.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0060, 39.6070] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.903623,
+          39.524259
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-074",
-        "trailId": "mary-carter-greenway",
+        "trailId": "big-dry-creek-south",
         "parkId": null,
         "category": "vegetation",
         "severity": "low",
@@ -1627,14 +2065,20 @@
         "fieldNotes": null,
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-105.0115, 39.5860] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943142,
+          39.575905
+        ]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "id": "mi-075",
-        "trailId": "willow-creek",
-        "parkId": null,
+        "trailId": "cook-creek",
+        "parkId": "tennis-center-and-park-at-lone-tree-golf-course",
         "category": "trail_surface",
         "severity": "high",
         "status": "reported",
@@ -1649,7 +2093,13 @@
         "fieldNotes": "DO NOT drive equipment over this section. Barricade placed. Needs complete reconstruction.",
         "aiAnalysis": null
       },
-      "geometry": { "type": "Point", "coordinates": [-104.9910, 39.5730] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.90019,
+          39.550388
+        ]
+      }
     }
   ]
 }

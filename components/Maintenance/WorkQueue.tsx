@@ -171,11 +171,13 @@ export function WorkQueue({
   );
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  // When initial filters change from outside (drilldown from Stats), update state
+  // When initial filters change from outside (drilldown from Stats), update state.
+  // Always reset all filters so switching from one drilldown to another doesn't
+  // leave stale values (e.g., status="open" lingering when severity changes).
   useEffect(() => {
-    if (initialStatus) setFilterStatus(initialStatus as FilterStatus);
-    if (initialSeverity) setFilterSeverity(initialSeverity as IssueSeverity);
-    if (initialCategory) setFilterCategory(initialCategory as IssueCategory);
+    setFilterStatus((initialStatus as FilterStatus) || "all");
+    setFilterSeverity((initialSeverity as IssueSeverity) || "all");
+    setFilterCategory((initialCategory as IssueCategory) || "all");
     setFilterMonths(initialMonths || null);
   }, [initialStatus, initialSeverity, initialCategory, initialMonths]);
 

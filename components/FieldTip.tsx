@@ -64,6 +64,16 @@ const FIELD_TIP_DATABASE: Record<string, { message: string; lessonId: number | n
     message: "You just added the maintenance layer to the map. The color coding shows severity -- that's thematic mapping. Overlay it with waterways to spot erosion patterns.",
     lessonId: 7,
   },
+
+  // Photo analysis
+  "ai-photo-analysis": {
+    message: "AI just analyzed your photo using computer vision -- similar to how remote sensing classifies satellite imagery. The AI identified features and patterns, but your field expertise should always validate the result.",
+    lessonId: 7,
+  },
+  "exif-gps": {
+    message: "Your photo's EXIF metadata contained GPS coordinates embedded by the camera. This is the same concept as geotagging -- every photo you take in the field is a georeferenced data point. Accuracy depends on the device's GPS chip.",
+    lessonId: 2,
+  },
 };
 
 interface FieldTipProps {

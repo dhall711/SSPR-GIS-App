@@ -51,6 +51,9 @@ const localMaintenance = _maintenanceData as unknown as FeatureCollection;
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
+// Module-level constant to avoid re-creating on each render
+const EMPTY_FC: FeatureCollection = { type: "FeatureCollection", features: [] };
+
 interface MapViewProps {
   layerVisibility: LayerVisibility;
   onLayerToggle: (layerId: OverlayLayerId) => void;
@@ -113,13 +116,16 @@ function HomeButton() {
 /** Imperatively fly the map to a location when the `target` prop changes. */
 function FlyToHandler({ target }: { target: { lat: number; lng: number; zoom?: number } | null }) {
   const map = useMap();
-  const prevTarget = useRef<string | null>(null);
+  const prevRef = useRef<typeof target>(null);
 
   useEffect(() => {
-    if (!target) return;
-    const key = `${target.lat},${target.lng},${target.zoom ?? 16}`;
-    if (key === prevTarget.current) return;
-    prevTarget.current = key;
+    if (!target) {
+      prevRef.current = null;
+      return;
+    }
+    // Fly whenever the target object reference changes (React creates a new object each setState call)
+    if (target === prevRef.current) return;
+    prevRef.current = target;
     map.flyTo([target.lat, target.lng], target.zoom ?? 16, { duration: 1.2 });
   }, [target, map]);
 
@@ -146,9 +152,8 @@ export default function MapView({
   const [dataSource, setDataSource] = useState<"local" | "supabase">("local");
 
   // External (Phase 4) data
-  const emptyFC: FeatureCollection = { type: "FeatureCollection", features: [] };
-  const [regionalParksData, setRegionalParksData] = useState<FeatureCollection>(emptyFC);
-  const [nhdData, setNhdData] = useState<FeatureCollection>(emptyFC);
+  const [regionalParksData, setRegionalParksData] = useState<FeatureCollection>(EMPTY_FC);
+  const [nhdData, setNhdData] = useState<FeatureCollection>(EMPTY_FC);
   const [priorityWeights, setPriorityWeights] = useState<PriorityWeights>(DEFAULT_PRIORITY_WEIGHTS);
 
   // Riparian buffer state

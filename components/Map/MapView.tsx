@@ -67,6 +67,44 @@ function MapEventHandler({
   return null;
 }
 
+/** Home button — resets the map to the default SSPR center + zoom. */
+function HomeButton() {
+  const map = useMap();
+  return (
+    <div className="leaflet-top leaflet-right" style={{ marginTop: 80 }}>
+      <div className="leaflet-control leaflet-bar">
+        <a
+          href="#"
+          role="button"
+          title="Reset to home view"
+          aria-label="Reset to home view"
+          onClick={(e) => {
+            e.preventDefault();
+            map.flyTo(SSPR_CENTER, SSPR_DEFAULT_ZOOM, { duration: 0.8 });
+          }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 30,
+            height: 30,
+            fontSize: 16,
+            lineHeight: "30px",
+            cursor: "pointer",
+            color: "#333",
+            backgroundColor: "white",
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 /** Imperatively fly the map to a location when the `target` prop changes. */
 function FlyToHandler({ target }: { target: { lat: number; lng: number; zoom?: number } | null }) {
   const map = useMap();
@@ -166,6 +204,7 @@ export default function MapView({
         className="h-full w-full"
       >
         <ZoomControl position="topright" />
+        <HomeButton />
 
         {/* Active basemap tile layer */}
         <TileLayer

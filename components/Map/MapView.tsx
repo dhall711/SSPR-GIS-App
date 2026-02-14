@@ -112,7 +112,7 @@ function FlyToHandler({ target }: { target: { lat: number; lng: number; zoom?: n
 
   useEffect(() => {
     if (!target) return;
-    const key = `${target.lat},${target.lng}`;
+    const key = `${target.lat},${target.lng},${target.zoom ?? 16}`;
     if (key === prevTarget.current) return;
     prevTarget.current = key;
     map.flyTo([target.lat, target.lng], target.zoom ?? 16, { duration: 1.2 });
@@ -171,12 +171,13 @@ export default function MapView({
       fetchLayer("boundaries"),
       fetchLayer("issues"),
     ]).then(([trails, parks, waterways, boundaries, issues]) => {
-      if (trails && trails.features.length > 0) setTrailsData(trails);
-      if (parks && parks.features.length > 0) setParksData(parks);
-      if (waterways && waterways.features.length > 0) setWaterwaysData(waterways);
-      if (boundaries && boundaries.features.length > 0) setBoundaryData(boundaries);
-      if (issues && issues.features.length > 0) setMaintenanceData(issues);
-      setDataSource("supabase");
+      let anyLoaded = false;
+      if (trails && trails.features.length > 0) { setTrailsData(trails); anyLoaded = true; }
+      if (parks && parks.features.length > 0) { setParksData(parks); anyLoaded = true; }
+      if (waterways && waterways.features.length > 0) { setWaterwaysData(waterways); anyLoaded = true; }
+      if (boundaries && boundaries.features.length > 0) { setBoundaryData(boundaries); anyLoaded = true; }
+      if (issues && issues.features.length > 0) { setMaintenanceData(issues); anyLoaded = true; }
+      if (anyLoaded) setDataSource("supabase");
     });
   }, []);
 

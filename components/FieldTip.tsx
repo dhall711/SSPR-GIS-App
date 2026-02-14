@@ -148,7 +148,7 @@ export function useFieldTips() {
       const tipData = FIELD_TIP_DATABASE[specificKey] || FIELD_TIP_DATABASE[trigger];
 
       if (!tipData) return;
-      if (dismissedTips.has(specificKey) && dismissedTips.has(trigger)) return;
+      if (dismissedTips.has(specificKey) || dismissedTips.has(trigger)) return;
 
       const tip: FieldTipType = {
         id: `${trigger}-${Date.now()}`,

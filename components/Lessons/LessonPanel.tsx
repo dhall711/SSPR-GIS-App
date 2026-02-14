@@ -229,8 +229,8 @@ function LessonList({ onSelect, progress }: { onSelect: (id: number) => void; pr
         );
       })}
 
-      {/* Placeholder for lessons 9-12 (not yet implemented) */}
-      {[9, 10, 11, 12].map((id) => (
+      {/* Placeholder for lessons 11-12 (not yet implemented) */}
+      {[11, 12].map((id) => (
         <div
           key={id}
           className="w-full rounded-lg bg-white/[0.02] p-3 opacity-40 cursor-not-allowed"
@@ -240,7 +240,7 @@ function LessonList({ onSelect, progress }: { onSelect: (id: number) => void; pr
               {id}
             </span>
             <div>
-              <h3 className="text-sm font-medium text-white/40">Coming in Phase {id <= 10 ? 3 : 4}</h3>
+              <h3 className="text-sm font-medium text-white/40">Coming in Phase 4</h3>
               <p className="text-xs text-white/20 mt-0.5">Not yet available</p>
             </div>
           </div>

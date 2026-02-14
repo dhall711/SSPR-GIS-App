@@ -7,6 +7,7 @@ import {
   ISSUE_CATEGORY_LABELS,
   MaintenanceIssue,
 } from "@/lib/types";
+import { SSPR_CENTER } from "@/lib/mapConfig";
 
 interface QuickReportProps {
   onSubmit: (issue: Omit<MaintenanceIssue, "id" | "reportedAt" | "resolvedAt" | "aiAnalysis">) => void;
@@ -30,10 +31,12 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [gpsStatus, setGpsStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [gpsAccuracy, setGpsAccuracy] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const getLocation = useCallback(() => {
@@ -62,6 +65,7 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
   const handlePhotoCapture = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      setPhotoFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {
         setPhotoPreview(reader.result as string);
@@ -70,12 +74,31 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
     }
   }, []);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     if (!category || !title.trim()) return;
 
+    setIsUploading(true);
+
+    // Upload photo to Supabase Storage if one was captured
+    let photoUrl: string | null = null;
+    if (photoFile) {
+      try {
+        const formData = new FormData();
+        formData.append("file", photoFile);
+        const res = await fetch("/api/upload", { method: "POST", body: formData });
+        const data = await res.json();
+        if (data.url) {
+          photoUrl = data.url;
+        }
+      } catch {
+        // Photo upload failed -- submit without photo rather than blocking
+        console.warn("Photo upload failed, submitting without photo");
+      }
+    }
+
     const issue: Omit<MaintenanceIssue, "id" | "reportedAt" | "resolvedAt" | "aiAnalysis"> = {
-      latitude: coords?.lat ?? 39.595,
-      longitude: coords?.lng ?? -104.988,
+      latitude: coords?.lat ?? SSPR_CENTER[0],
+      longitude: coords?.lng ?? SSPR_CENTER[1],
       trailId: null,
       parkId: null,
       category,
@@ -83,7 +106,7 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
       status: "reported",
       title: title.trim(),
       description: description.trim(),
-      photoUrl: photoPreview,
+      photoUrl,
       assignedTo: null,
       reporter: "field-worker",
       source: "field_entry",
@@ -92,8 +115,9 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
 
     onSubmit(issue);
     onFieldTip?.("report-submitted", category);
+    setIsUploading(false);
     setSubmitted(true);
-  }, [category, severity, title, description, photoPreview, coords, onSubmit, onFieldTip]);
+  }, [category, severity, title, description, photoFile, coords, onSubmit, onFieldTip]);
 
   const resetForm = useCallback(() => {
     setCategory(null);
@@ -101,10 +125,12 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
     setTitle("");
     setDescription("");
     setPhotoPreview(null);
+    setPhotoFile(null);
     setCoords(null);
     setGpsStatus("idle");
     setGpsAccuracy(null);
     setSubmitted(false);
+    setIsUploading(false);
   }, []);
 
   if (submitted) {
@@ -271,6 +297,7 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
               <button
                 onClick={() => {
                   setPhotoPreview(null);
+                  setPhotoFile(null);
                   if (fileInputRef.current) fileInputRef.current.value = "";
                 }}
                 className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 text-white hover:bg-black/80 min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -305,14 +332,24 @@ export function QuickReport({ onSubmit, onFieldTip }: QuickReportProps) {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          disabled={!category || !title.trim()}
+          disabled={!category || !title.trim() || isUploading}
           className={`w-full rounded-lg px-4 py-3 text-base font-semibold transition-colors min-h-[48px] ${
-            category && title.trim()
+            category && title.trim() && !isUploading
               ? "bg-trail-green text-white hover:bg-trail-green/80"
               : "bg-white/5 text-white/30 cursor-not-allowed"
           }`}
         >
-          Submit Report
+          {isUploading ? (
+            <span className="flex items-center justify-center gap-2">
+              <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+              {photoFile ? "Uploading photo..." : "Submitting..."}
+            </span>
+          ) : (
+            "Submit Report"
+          )}
         </button>
       </div>
     </div>

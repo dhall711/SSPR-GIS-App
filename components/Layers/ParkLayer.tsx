@@ -102,7 +102,7 @@ export function ParkLayer({ data, issueData, onFeatureClick, highlightId }: Park
 
   return (
     <GeoJSON
-      key="parks"
+      key={`parks-${highlightId || "none"}`}
       data={data}
       pointToLayer={pointToLayer}
       onEachFeature={onEachFeature}

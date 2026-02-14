@@ -8,7 +8,6 @@ export const SSPR_MAX_ZOOM = 18;
 
 // Basemap tile configurations
 export function getBasemaps(): BasemapOption[] {
-  const arcgisKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY || "";
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
   return [

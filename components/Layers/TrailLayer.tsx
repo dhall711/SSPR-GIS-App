@@ -101,7 +101,7 @@ export function TrailLayer({ data, issueData, onFeatureClick, highlightId }: Tra
 
   return (
     <GeoJSON
-      key="trails"
+      key={`trails-${highlightId || "none"}`}
       data={data}
       style={style}
       onEachFeature={onEachFeature}

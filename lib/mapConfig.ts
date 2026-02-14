@@ -1,8 +1,9 @@
 import { BasemapOption, LayerVisibility } from "./types";
 
-// SSPR District center coordinates (Highlands Ranch / Lone Tree area)
-export const SSPR_CENTER: [number, number] = [39.555, -104.935];
-export const SSPR_DEFAULT_ZOOM = 13;
+// SSPR District center: South Suburban Sports Complex (4810 E County Line Rd)
+// Home base for trail maintenance operations
+export const SSPR_CENTER: [number, number] = [39.5645, -104.9265];
+export const SSPR_DEFAULT_ZOOM = 14;
 export const SSPR_MIN_ZOOM = 10;
 export const SSPR_MAX_ZOOM = 18;
 

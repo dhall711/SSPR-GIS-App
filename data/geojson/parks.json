@@ -2973,13 +2973,13 @@
         "ecologicalClass": "built",
         "gridRef": "J-7",
         "areaAcres": null,
-        "description": "Sports and recreation complex."
+        "description": "Home base for SSPR trail maintenance operations. Located at 4810 E County Line Rd, featuring ice rinks, gyms, turf fields, and the trail operations dispatch center."
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -104.942,
-          39.5648
+          -104.9265,
+          39.5645
         ]
       }
     },

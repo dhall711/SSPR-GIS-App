@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect, ReactNode } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import ReactMarkdown, { Components } from "react-markdown";
 import { ChatMessage } from "@/lib/types";
 
 interface ChatWidgetProps {
@@ -12,40 +13,15 @@ interface ChatWidgetProps {
   onFeatureHighlight: (featureId: string | null) => void;
 }
 
-function parseMessageContent(
-  content: string,
-  onFeatureClick: (featureId: string) => void
-): ReactNode[] {
-  const parts: ReactNode[] = [];
-  const regex = /\[\[([^\]|]+)\|([^\]]+)\]\]/g;
-  let lastIndex = 0;
-  let match;
-  let key = 0;
-
-  while ((match = regex.exec(content)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(content.slice(lastIndex, match.index));
-    }
-    const displayName = match[1];
-    const featureId = match[2];
-    parts.push(
-      <button
-        key={key++}
-        onClick={() => onFeatureClick(featureId)}
-        className="text-green-700 hover:text-green-900 underline decoration-dotted underline-offset-2 font-semibold transition-colors"
-        title="Click to highlight on map"
-      >
-        {displayName}
-      </button>
-    );
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < content.length) {
-    parts.push(content.slice(lastIndex));
-  }
-
-  return parts.length > 0 ? parts : [content];
+/**
+ * Pre-process content to extract [[Display Name|feature-id]] links
+ * and convert them to a markdown-compatible format we can intercept.
+ */
+function preprocessFeatureLinks(content: string): string {
+  return content.replace(
+    /\[\[([^\]|]+)\|([^\]]+)\]\]/g,
+    (_, displayName, featureId) => `[${displayName}](feature://${featureId})`
+  );
 }
 
 export function ChatWidget({
@@ -134,9 +110,47 @@ export function ChatWidget({
     }
   };
 
-  const handleFeatureClick = (featureId: string) => {
+  const handleFeatureClick = useCallback((featureId: string) => {
     onFeatureHighlight(featureId);
     setTimeout(() => onFeatureHighlight(null), 5000);
+  }, [onFeatureHighlight]);
+
+  // Markdown component overrides for assistant messages
+  const mdComponents: Components = {
+    // Intercept links to handle feature:// links
+    a: ({ href, children }) => {
+      if (href?.startsWith("feature://")) {
+        const featureId = href.replace("feature://", "");
+        return (
+          <button
+            onClick={() => handleFeatureClick(featureId)}
+            className="text-green-700 hover:text-green-900 underline decoration-dotted underline-offset-2 font-semibold transition-colors"
+            title="Click to highlight on map"
+          >
+            {children}
+          </button>
+        );
+      }
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-green-900 underline">
+          {children}
+        </a>
+      );
+    },
+    p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+    strong: ({ children }) => <strong className="font-semibold text-gray-900">{children}</strong>,
+    em: ({ children }) => <em className="italic">{children}</em>,
+    ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-0.5">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-0.5">{children}</ol>,
+    li: ({ children }) => <li className="text-gray-800">{children}</li>,
+    h1: ({ children }) => <h3 className="font-bold text-gray-900 text-base mb-1 mt-2">{children}</h3>,
+    h2: ({ children }) => <h3 className="font-bold text-gray-900 text-base mb-1 mt-2">{children}</h3>,
+    h3: ({ children }) => <h4 className="font-semibold text-gray-900 text-sm mb-1 mt-2">{children}</h4>,
+    code: ({ children }) => <code className="bg-gray-100 text-green-800 px-1 py-0.5 rounded text-xs font-mono">{children}</code>,
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-3 border-green-400 pl-3 my-2 text-gray-600 italic">{children}</blockquote>
+    ),
+    hr: () => <hr className="my-2 border-gray-200" />,
   };
 
   if (!isOpen) return null;
@@ -204,13 +218,17 @@ export function ChatWidget({
                   : "bg-white shadow-sm border border-gray-200 text-gray-900"
               }`}
             >
-              <div className={`text-sm whitespace-pre-wrap leading-relaxed ${
-                msg.role === "assistant" ? "text-gray-800" : ""
-              }`}>
-                {msg.role === "assistant"
-                  ? parseMessageContent(msg.content, handleFeatureClick)
-                  : msg.content}
-              </div>
+              {msg.role === "assistant" ? (
+                <div className="text-sm leading-relaxed text-gray-800 prose-chat">
+                  <ReactMarkdown components={mdComponents}>
+                    {preprocessFeatureLinks(msg.content)}
+                  </ReactMarkdown>
+                </div>
+              ) : (
+                <div className="text-sm whitespace-pre-wrap leading-relaxed">
+                  {msg.content}
+                </div>
+              )}
             </div>
           </div>
         ))}

@@ -541,6 +541,16 @@ export default function HomePage() {
             </div>
           )}
 
+          {/* Stats Tab (mobile) */}
+          {mobileTab === "stats" && (
+            <div className="md:hidden absolute inset-0 bg-sidebar-bg overflow-hidden pb-20">
+              <StatsPanel
+                issues={issues}
+                onClose={() => setMobileTab("map")}
+              />
+            </div>
+          )}
+
           {/* Learn Tab (mobile) */}
           {mobileTab === "learn" && (
             <div className="md:hidden absolute inset-0 bg-sidebar-bg overflow-y-auto pb-20">

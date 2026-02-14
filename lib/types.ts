@@ -114,7 +114,7 @@ export interface MaintenanceIssue {
 // Mobile App Navigation
 // ============================================================
 
-export type MobileTab = "map" | "report" | "tasks" | "learn";
+export type MobileTab = "map" | "report" | "tasks" | "stats" | "learn";
 
 // ============================================================
 // Field Tip Types

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   MaintenanceIssue,
   IssueCategory,
@@ -15,10 +15,15 @@ interface WorkQueueProps {
   userLocation?: { lat: number; lng: number } | null;
   onIssueSelect?: (issue: MaintenanceIssue) => void;
   onFieldTip?: (trigger: string, context?: string) => void;
+  initialStatus?: string;
+  initialSeverity?: string;
+  initialCategory?: string;
+  filterLabel?: string;
+  onClearFilter?: () => void;
 }
 
 type SortMode = "proximity" | "severity" | "date";
-type FilterStatus = "all" | IssueStatus;
+type FilterStatus = "all" | "open" | IssueStatus;
 
 function haversineDistance(
   lat1: number,
@@ -67,13 +72,32 @@ export function WorkQueue({
   userLocation,
   onIssueSelect,
   onFieldTip,
+  initialStatus,
+  initialSeverity,
+  initialCategory,
+  filterLabel,
+  onClearFilter,
 }: WorkQueueProps) {
   const [sortMode, setSortMode] = useState<SortMode>(
     userLocation ? "proximity" : "severity"
   );
-  const [filterStatus, setFilterStatus] = useState<FilterStatus>("all");
-  const [filterCategory, setFilterCategory] = useState<IssueCategory | "all">("all");
+  const [filterStatus, setFilterStatus] = useState<FilterStatus>(
+    (initialStatus as FilterStatus) || "all"
+  );
+  const [filterSeverity, setFilterSeverity] = useState<IssueSeverity | "all">(
+    (initialSeverity as IssueSeverity) || "all"
+  );
+  const [filterCategory, setFilterCategory] = useState<IssueCategory | "all">(
+    (initialCategory as IssueCategory) || "all"
+  );
   const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  // When initial filters change from outside (drilldown from Stats), update state
+  useEffect(() => {
+    if (initialStatus) setFilterStatus(initialStatus as FilterStatus);
+    if (initialSeverity) setFilterSeverity(initialSeverity as IssueSeverity);
+    if (initialCategory) setFilterCategory(initialCategory as IssueCategory);
+  }, [initialStatus, initialSeverity, initialCategory]);
 
   const issuesWithDistance = useMemo(() => {
     return issues.map((issue) => ({
@@ -92,13 +116,23 @@ export function WorkQueue({
   const filteredAndSorted = useMemo(() => {
     let filtered = issuesWithDistance;
 
-    // Filter out resolved
-    if (filterStatus !== "all") {
+    // Status filter
+    if (filterStatus === "open") {
+      // "Open" = everything except resolved
+      filtered = filtered.filter((i) => i.status !== "resolved");
+    } else if (filterStatus !== "all") {
       filtered = filtered.filter((i) => i.status === filterStatus);
     } else {
+      // "all" default also hides resolved unless explicitly chosen
       filtered = filtered.filter((i) => i.status !== "resolved");
     }
 
+    // Severity filter
+    if (filterSeverity !== "all") {
+      filtered = filtered.filter((i) => i.severity === filterSeverity);
+    }
+
+    // Category filter
     if (filterCategory !== "all") {
       filtered = filtered.filter((i) => i.category === filterCategory);
     }
@@ -117,7 +151,7 @@ export function WorkQueue({
           return 0;
       }
     });
-  }, [issuesWithDistance, sortMode, filterStatus, filterCategory]);
+  }, [issuesWithDistance, sortMode, filterStatus, filterSeverity, filterCategory]);
 
   const handleIssueClick = useCallback(
     (issue: MaintenanceIssue) => {
@@ -150,6 +184,29 @@ export function WorkQueue({
           <span className="text-blue-400">{statusCounts.in_progress} active</span>
         </div>
       </div>
+
+      {/* Active Filter Banner (from Stats drilldown) */}
+      {filterLabel && (
+        <div className="mx-4 mb-2 flex items-center justify-between rounded-lg bg-trail-gold/15 border border-trail-gold/30 px-3 py-2">
+          <div className="flex items-center gap-2">
+            <svg className="h-3.5 w-3.5 text-trail-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            <span className="text-xs font-medium text-trail-gold">{filterLabel}</span>
+          </div>
+          <button
+            onClick={() => {
+              setFilterStatus("all");
+              setFilterSeverity("all");
+              setFilterCategory("all");
+              onClearFilter?.();
+            }}
+            className="text-xs text-trail-gold/70 hover:text-trail-gold transition-colors"
+          >
+            Clear
+          </button>
+        </div>
+      )}
 
       {/* Sort & Filter Controls */}
       <div className="px-4 pb-2 space-y-2">
@@ -190,7 +247,10 @@ export function WorkQueue({
           ).map((opt) => (
             <button
               key={opt.value}
-              onClick={() => setFilterStatus(opt.value)}
+              onClick={() => {
+                setFilterStatus(opt.value);
+                onClearFilter?.(); // clear drilldown label when manually changing filters
+              }}
               className={`whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium transition-colors min-h-[32px] ${
                 filterStatus === opt.value
                   ? "bg-white/15 text-white"
@@ -205,7 +265,10 @@ export function WorkQueue({
         {/* Category Filter */}
         <select
           value={filterCategory}
-          onChange={(e) => setFilterCategory(e.target.value as IssueCategory | "all")}
+          onChange={(e) => {
+            setFilterCategory(e.target.value as IssueCategory | "all");
+            onClearFilter?.();
+          }}
           className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 focus:border-trail-gold/50 focus:outline-none min-h-[36px]"
         >
           <option value="all">All categories</option>

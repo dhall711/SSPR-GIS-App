@@ -7,7 +7,7 @@ import { LessonPanel } from "@/components/Lessons/LessonPanel";
 import { QuickReport } from "@/components/Maintenance/QuickReport";
 import { WorkQueue } from "@/components/Maintenance/WorkQueue";
 import { IssueDetail } from "@/components/Maintenance/IssueDetail";
-import { StatsPanel } from "@/components/Maintenance/StatsPanel";
+import { StatsPanel, StatsFilter } from "@/components/Maintenance/StatsPanel";
 import { MobileNav } from "@/components/MobileNav";
 import { FieldTipBanner, useFieldTips } from "@/components/FieldTip";
 import { DEFAULT_LAYER_VISIBILITY } from "@/lib/mapConfig";
@@ -65,6 +65,9 @@ export default function HomePage() {
 
   // Desktop right panel tab
   const [desktopRightPanel, setDesktopRightPanel] = useState<"none" | "tasks" | "detail" | "stats">("none");
+
+  // Drilldown filter (from Stats -> Tasks navigation)
+  const [drilldownFilter, setDrilldownFilter] = useState<StatsFilter | null>(null);
 
   // Field tips
   const { currentTip, triggerFieldTip, dismissTip } = useFieldTips();
@@ -350,6 +353,22 @@ export default function HomePage() {
     []
   );
 
+  // Handle drilldown from Stats to Tasks with pre-applied filter
+  const handleStatsDrillDown = useCallback(
+    (filter: StatsFilter) => {
+      setDrilldownFilter(filter);
+      setSelectedIssue(null);
+      // Navigate to tasks view
+      setDesktopRightPanel("tasks");
+      setMobileTab("tasks");
+    },
+    []
+  );
+
+  const handleClearDrilldown = useCallback(() => {
+    setDrilldownFilter(null);
+  }, []);
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* ======= DESKTOP: Lesson Panel Sidebar ======= */}
@@ -536,6 +555,11 @@ export default function HomePage() {
                   userLocation={userLocation}
                   onIssueSelect={handleIssueSelect}
                   onFieldTip={triggerFieldTip}
+                  initialStatus={drilldownFilter?.status}
+                  initialSeverity={drilldownFilter?.severity}
+                  initialCategory={drilldownFilter?.category}
+                  filterLabel={drilldownFilter?.label}
+                  onClearFilter={handleClearDrilldown}
                 />
               )}
             </div>
@@ -547,6 +571,7 @@ export default function HomePage() {
               <StatsPanel
                 issues={issues}
                 onClose={() => setMobileTab("map")}
+                onDrillDown={handleStatsDrillDown}
               />
             </div>
           )}
@@ -584,6 +609,7 @@ export default function HomePage() {
             <StatsPanel
               issues={issues}
               onClose={() => setDesktopRightPanel("none")}
+              onDrillDown={handleStatsDrillDown}
             />
           ) : (
             <WorkQueue
@@ -591,6 +617,11 @@ export default function HomePage() {
               userLocation={userLocation}
               onIssueSelect={handleIssueSelect}
               onFieldTip={triggerFieldTip}
+              initialStatus={drilldownFilter?.status}
+              initialSeverity={drilldownFilter?.severity}
+              initialCategory={drilldownFilter?.category}
+              filterLabel={drilldownFilter?.label}
+              onClearFilter={handleClearDrilldown}
             />
           )}
         </aside>

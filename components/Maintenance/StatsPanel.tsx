@@ -9,15 +9,26 @@ import {
 } from "@/lib/types";
 import { SEVERITY_COLORS } from "@/lib/mapConfig";
 
+export interface StatsFilter {
+  status?: string;
+  severity?: string;
+  category?: string;
+  label: string;
+}
+
 interface StatsPanelProps {
   issues: MaintenanceIssue[];
   onClose: () => void;
+  onDrillDown?: (filter: StatsFilter) => void;
 }
 
-function StatBar({ label, value, total, color }: { label: string; value: number; total: number; color: string }) {
+function StatBar({ label, value, total, color, onClick }: { label: string; value: number; total: number; color: string; onClick?: () => void }) {
   const pct = total > 0 ? (value / total) * 100 : 0;
   return (
-    <div className="flex items-center gap-2">
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-2 w-full text-left rounded-md px-1 py-0.5 transition-colors ${onClick ? "hover:bg-white/5 cursor-pointer" : ""}`}
+    >
       <span className="text-xs text-white/60 w-28 truncate" title={label}>{label}</span>
       <div className="flex-1 h-2.5 rounded-full bg-white/10 overflow-hidden">
         <div
@@ -26,7 +37,12 @@ function StatBar({ label, value, total, color }: { label: string; value: number;
         />
       </div>
       <span className="text-xs font-mono text-white/50 w-8 text-right">{value}</span>
-    </div>
+      {onClick && (
+        <svg className="h-3 w-3 text-white/30 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      )}
+    </button>
   );
 }
 
@@ -49,7 +65,7 @@ const SEASONAL_INSIGHTS: Record<number, string> = {
   3: "Fall: Falling leaves obscure trail hazards. Early freeze warnings. Pre-winter maintenance window.",
 };
 
-export function StatsPanel({ issues, onClose }: StatsPanelProps) {
+export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
   const [activeView, setActiveView] = useState<"overview" | "seasonal">("overview");
 
   const stats = useMemo(() => {
@@ -208,18 +224,27 @@ export function StatsPanel({ issues, onClose }: StatsPanelProps) {
           <>
             {/* KPI Cards */}
             <div className="grid grid-cols-2 gap-2">
-              <div className="rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-2.5 text-center">
+              <button
+                onClick={() => onDrillDown?.({ status: "open", label: "Open Issues" })}
+                className="rounded-lg bg-red-500/10 border border-red-500/20 px-3 py-2.5 text-center transition-colors hover:bg-red-500/20 hover:border-red-500/30"
+              >
                 <p className="text-2xl font-bold text-red-400">{stats.openCount}</p>
                 <p className="text-[10px] text-red-400/60 uppercase tracking-wider">Open Issues</p>
-              </div>
-              <div className="rounded-lg bg-green-500/10 border border-green-500/20 px-3 py-2.5 text-center">
+              </button>
+              <button
+                onClick={() => onDrillDown?.({ status: "resolved", label: "Resolved Issues" })}
+                className="rounded-lg bg-green-500/10 border border-green-500/20 px-3 py-2.5 text-center transition-colors hover:bg-green-500/20 hover:border-green-500/30"
+              >
                 <p className="text-2xl font-bold text-green-400">{stats.resolvedCount}</p>
                 <p className="text-[10px] text-green-400/60 uppercase tracking-wider">Resolved</p>
-              </div>
-              <div className="rounded-lg bg-orange-500/10 border border-orange-500/20 px-3 py-2.5 text-center">
+              </button>
+              <button
+                onClick={() => onDrillDown?.({ severity: "critical", label: "Critical Issues" })}
+                className="rounded-lg bg-orange-500/10 border border-orange-500/20 px-3 py-2.5 text-center transition-colors hover:bg-orange-500/20 hover:border-orange-500/30"
+              >
                 <p className="text-2xl font-bold text-orange-400">{stats.criticalOpen}</p>
                 <p className="text-[10px] text-orange-400/60 uppercase tracking-wider">Critical Open</p>
-              </div>
+              </button>
               <div className="rounded-lg bg-blue-500/10 border border-blue-500/20 px-3 py-2.5 text-center">
                 <p className="text-2xl font-bold text-blue-400">
                   {stats.avgResolutionHours !== null ? `${stats.avgResolutionHours}h` : "--"}
@@ -255,9 +280,16 @@ export function StatsPanel({ issues, onClose }: StatsPanelProps) {
             {/* By Status */}
             <div>
               <h3 className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">By Status</h3>
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 {Object.entries(stats.byStatus).map(([status, count]) => (
-                  <StatBar key={status} label={STATUS_LABELS[status] || status} value={count} total={stats.total} color={STATUS_COLORS[status] || "#666"} />
+                  <StatBar
+                    key={status}
+                    label={STATUS_LABELS[status] || status}
+                    value={count}
+                    total={stats.total}
+                    color={STATUS_COLORS[status] || "#666"}
+                    onClick={() => onDrillDown?.({ status, label: `${STATUS_LABELS[status] || status} Issues` })}
+                  />
                 ))}
               </div>
             </div>
@@ -265,9 +297,16 @@ export function StatsPanel({ issues, onClose }: StatsPanelProps) {
             {/* By Severity */}
             <div>
               <h3 className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">By Severity</h3>
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 {SEVERITY_ORDER.map((sev) => (
-                  <StatBar key={sev} label={sev.charAt(0).toUpperCase() + sev.slice(1)} value={stats.bySeverity[sev] || 0} total={stats.total} color={SEVERITY_COLORS[sev]} />
+                  <StatBar
+                    key={sev}
+                    label={sev.charAt(0).toUpperCase() + sev.slice(1)}
+                    value={stats.bySeverity[sev] || 0}
+                    total={stats.total}
+                    color={SEVERITY_COLORS[sev]}
+                    onClick={() => onDrillDown?.({ severity: sev, label: `${sev.charAt(0).toUpperCase() + sev.slice(1)} Severity` })}
+                  />
                 ))}
               </div>
             </div>
@@ -275,9 +314,16 @@ export function StatsPanel({ issues, onClose }: StatsPanelProps) {
             {/* By Category */}
             <div>
               <h3 className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">By Category</h3>
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 {stats.topCategories.map(([cat, count]) => (
-                  <StatBar key={cat} label={ISSUE_CATEGORY_LABELS[cat as IssueCategory] || cat} value={count} total={stats.total} color={CATEGORY_COLORS[cat] || "#666"} />
+                  <StatBar
+                    key={cat}
+                    label={ISSUE_CATEGORY_LABELS[cat as IssueCategory] || cat}
+                    value={count}
+                    total={stats.total}
+                    color={CATEGORY_COLORS[cat] || "#666"}
+                    onClick={() => onDrillDown?.({ category: cat, label: ISSUE_CATEGORY_LABELS[cat as IssueCategory] || cat })}
+                  />
                 ))}
               </div>
             </div>

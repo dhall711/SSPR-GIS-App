@@ -426,13 +426,14 @@ export default function HomePage() {
             )}
             {/* Desktop Tasks Panel Toggle */}
             <button
-              onClick={() =>
+              onClick={() => {
                 setDesktopRightPanel((prev) =>
                   prev === "tasks" ? "none" : "tasks"
-                )
-              }
+                );
+                setIsChatOpen(false); // close chat when opening side panel
+              }}
               className={`hidden md:flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors min-h-[36px] ${
-                desktopRightPanel !== "none"
+                desktopRightPanel === "tasks"
                   ? "bg-trail-gold text-trail-green-dark"
                   : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
               }`}
@@ -449,11 +450,12 @@ export default function HomePage() {
             </button>
             {/* Desktop Stats Toggle */}
             <button
-              onClick={() =>
+              onClick={() => {
                 setDesktopRightPanel((prev) =>
                   prev === "stats" ? "none" : "stats"
-                )
-              }
+                );
+                setIsChatOpen(false); // close chat when opening side panel
+              }}
               className={`hidden md:flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors min-h-[36px] ${
                 desktopRightPanel === "stats"
                   ? "bg-trail-gold text-trail-green-dark"
@@ -466,7 +468,10 @@ export default function HomePage() {
               <span>Stats</span>
             </button>
             <button
-              onClick={() => setIsChatOpen(true)}
+              onClick={() => {
+                setIsChatOpen(true);
+                setDesktopRightPanel("none"); // close side panel when opening chat
+              }}
               className="flex items-center gap-2 rounded-lg bg-trail-green px-3 py-1.5 text-sm font-medium text-white hover:bg-trail-green/80 transition-colors min-h-[36px]"
             >
               <svg

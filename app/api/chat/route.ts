@@ -126,7 +126,7 @@ Communication style:
         : [{ role: "user" as const, content: message }];
 
     const response = await anthropic.messages.create({
-      model: "claude-3-5-haiku-20241022",
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 1024,
       system: systemPrompt,
       messages: apiMessages,
@@ -182,15 +182,26 @@ Communication style:
     console.error("Chat API error:", error);
 
     if (error instanceof Anthropic.APIError) {
+      // Return a user-friendly message instead of raw API details
+      const friendlyMessage =
+        error.status === 401
+          ? "The AI service key is invalid. Please check your ANTHROPIC_API_KEY."
+          : error.status === 429
+          ? "The AI service is busy right now. Please try again in a moment."
+          : error.status === 404
+          ? "The AI model is temporarily unavailable. Please try again later."
+          : "The AI service encountered an issue. Please try again.";
+
+      console.error(`Anthropic API error [${error.status}]:`, error.message);
       return NextResponse.json(
-        { error: `API error: ${error.message}` },
-        { status: error.status || 500 }
+        { error: friendlyMessage },
+        { status: 200 } // Return 200 so client treats it as handled error
       );
     }
 
     return NextResponse.json(
-      { error: "An unexpected error occurred" },
-      { status: 500 }
+      { error: "Something went wrong. Please try again." },
+      { status: 200 }
     );
   }
 }

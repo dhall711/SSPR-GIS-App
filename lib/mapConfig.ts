@@ -3,7 +3,7 @@ import { BasemapOption, LayerVisibility } from "./types";
 // SSPR District center: South Suburban Sports Complex (4810 E County Line Rd)
 // Home base for trail maintenance operations
 export const SSPR_CENTER: [number, number] = [39.5645, -104.9265];
-export const SSPR_DEFAULT_ZOOM = 14;
+export const SSPR_DEFAULT_ZOOM = 13;
 export const SSPR_MIN_ZOOM = 10;
 export const SSPR_MAX_ZOOM = 18;
 
@@ -87,6 +87,7 @@ export const TRAIL_COLORS: Record<string, string> = {
   L: "#3a86ff", // Mary Carter Greenway - bright blue
   M: "#fb5607", // Railroad Spur - dark orange
   N: "#52b788", // Willow Creek - eco green
+  O: "#14b8a6", // C-470 Trail - teal
 };
 
 // Park category icons and colors

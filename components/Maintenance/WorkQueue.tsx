@@ -18,6 +18,7 @@ interface WorkQueueProps {
   initialStatus?: string;
   initialSeverity?: string;
   initialCategory?: string;
+  initialMonths?: number[];
   filterLabel?: string;
   onClearFilter?: () => void;
 }
@@ -67,6 +68,80 @@ function formatTimeAgo(dateStr: string): string {
   return `${Math.floor(diffDays / 7)}w ago`;
 }
 
+// ── Export helpers ──────────────────────────────────────────────
+
+function downloadBlob(content: string, filename: string, mime: string) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function exportCSV(issues: MaintenanceIssue[]) {
+  const headers = [
+    "id", "title", "category", "severity", "status",
+    "latitude", "longitude", "description",
+    "reported_at", "resolved_at",
+    "reporter", "source", "assigned_to",
+    "trail_id", "park_id", "photo_url", "field_notes",
+  ];
+  const escapeCSV = (val: string | null | undefined) => {
+    if (val == null) return "";
+    const s = String(val);
+    return s.includes(",") || s.includes('"') || s.includes("\n")
+      ? `"${s.replace(/"/g, '""')}"`
+      : s;
+  };
+  const rows = issues.map((i) => [
+    i.id, i.title, i.category, i.severity, i.status,
+    i.latitude, i.longitude, i.description,
+    i.reportedAt, i.resolvedAt ?? "",
+    i.reporter, i.source, i.assignedTo ?? "",
+    i.trailId ?? "", i.parkId ?? "", i.photoUrl ?? "", i.fieldNotes ?? "",
+  ].map((v) => escapeCSV(String(v ?? ""))).join(","));
+
+  const csv = [headers.join(","), ...rows].join("\n");
+  const datestamp = new Date().toISOString().slice(0, 10);
+  downloadBlob(csv, `sspr-issues-${datestamp}.csv`, "text/csv;charset=utf-8;");
+}
+
+function exportGeoJSON(issues: MaintenanceIssue[]) {
+  const fc = {
+    type: "FeatureCollection" as const,
+    features: issues.map((i) => ({
+      type: "Feature" as const,
+      geometry: {
+        type: "Point" as const,
+        coordinates: [i.longitude, i.latitude],
+      },
+      properties: {
+        id: i.id,
+        title: i.title,
+        category: i.category,
+        severity: i.severity,
+        status: i.status,
+        description: i.description,
+        reportedAt: i.reportedAt,
+        resolvedAt: i.resolvedAt,
+        reporter: i.reporter,
+        source: i.source,
+        assignedTo: i.assignedTo,
+        trailId: i.trailId,
+        parkId: i.parkId,
+        photoUrl: i.photoUrl,
+        fieldNotes: i.fieldNotes,
+      },
+    })),
+  };
+  const datestamp = new Date().toISOString().slice(0, 10);
+  downloadBlob(JSON.stringify(fc, null, 2), `sspr-issues-${datestamp}.geojson`, "application/geo+json");
+}
+
 export function WorkQueue({
   issues,
   userLocation,
@@ -75,6 +150,7 @@ export function WorkQueue({
   initialStatus,
   initialSeverity,
   initialCategory,
+  initialMonths,
   filterLabel,
   onClearFilter,
 }: WorkQueueProps) {
@@ -90,6 +166,9 @@ export function WorkQueue({
   const [filterCategory, setFilterCategory] = useState<IssueCategory | "all">(
     (initialCategory as IssueCategory) || "all"
   );
+  const [filterMonths, setFilterMonths] = useState<number[] | null>(
+    initialMonths || null
+  );
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   // When initial filters change from outside (drilldown from Stats), update state
@@ -97,7 +176,8 @@ export function WorkQueue({
     if (initialStatus) setFilterStatus(initialStatus as FilterStatus);
     if (initialSeverity) setFilterSeverity(initialSeverity as IssueSeverity);
     if (initialCategory) setFilterCategory(initialCategory as IssueCategory);
-  }, [initialStatus, initialSeverity, initialCategory]);
+    setFilterMonths(initialMonths || null);
+  }, [initialStatus, initialSeverity, initialCategory, initialMonths]);
 
   const issuesWithDistance = useMemo(() => {
     return issues.map((issue) => ({
@@ -122,8 +202,8 @@ export function WorkQueue({
       filtered = filtered.filter((i) => i.status !== "resolved");
     } else if (filterStatus !== "all") {
       filtered = filtered.filter((i) => i.status === filterStatus);
-    } else {
-      // "all" default also hides resolved unless explicitly chosen
+    } else if (!filterMonths || filterMonths.length === 0) {
+      // "all" default hides resolved unless a seasonal drilldown is active
       filtered = filtered.filter((i) => i.status !== "resolved");
     }
 
@@ -135,6 +215,14 @@ export function WorkQueue({
     // Category filter
     if (filterCategory !== "all") {
       filtered = filtered.filter((i) => i.category === filterCategory);
+    }
+
+    // Month filter (for seasonal drilldowns)
+    if (filterMonths && filterMonths.length > 0) {
+      filtered = filtered.filter((i) => {
+        const month = new Date(i.reportedAt).getMonth();
+        return filterMonths.includes(month);
+      });
     }
 
     // Sort
@@ -151,7 +239,7 @@ export function WorkQueue({
           return 0;
       }
     });
-  }, [issuesWithDistance, sortMode, filterStatus, filterSeverity, filterCategory]);
+  }, [issuesWithDistance, sortMode, filterStatus, filterSeverity, filterCategory, filterMonths]);
 
   const handleIssueClick = useCallback(
     (issue: MaintenanceIssue) => {
@@ -173,15 +261,94 @@ export function WorkQueue({
     return counts;
   }, [issues]);
 
+  const [showExportMenu, setShowExportMenu] = useState(false);
+
   return (
     <div className="flex flex-col h-full overflow-hidden">
       {/* Header */}
       <div className="px-4 pt-4 pb-2">
-        <h2 className="text-lg font-semibold text-white">Work Queue</h2>
-        <div className="flex gap-3 mt-1 text-xs text-white/50">
-          <span className="text-red-400">{statusCounts.reported} new</span>
-          <span className="text-yellow-400">{statusCounts.assigned} assigned</span>
-          <span className="text-blue-400">{statusCounts.in_progress} active</span>
+        <div className="flex items-start justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-white">Work Queue</h2>
+            <div className="flex gap-3 mt-1 text-xs text-white/50">
+              <span className="text-red-400">{statusCounts.reported} new</span>
+              <span className="text-yellow-400">{statusCounts.assigned} assigned</span>
+              <span className="text-blue-400">{statusCounts.in_progress} active</span>
+            </div>
+          </div>
+          {/* Export Button */}
+          <div className="relative">
+            <button
+              onClick={() => setShowExportMenu((v) => !v)}
+              className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs text-white/60 hover:text-white hover:border-white/20 transition-colors min-h-[36px]"
+              title="Export data"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Export
+            </button>
+            {showExportMenu && (
+              <>
+                {/* Backdrop to close menu */}
+                <div className="fixed inset-0 z-40" onClick={() => setShowExportMenu(false)} />
+                <div className="absolute right-0 top-full mt-1 z-50 w-56 rounded-lg border border-white/15 bg-gray-900 shadow-xl overflow-hidden">
+                  <div className="px-3 py-2 border-b border-white/10">
+                    <p className="text-[10px] text-white/40 uppercase tracking-wider font-semibold">
+                      Export {filteredAndSorted.length} issue{filteredAndSorted.length !== 1 ? "s" : ""} (current view)
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      exportCSV(filteredAndSorted);
+                      setShowExportMenu(false);
+                    }}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-white/80 hover:bg-white/10 transition-colors"
+                  >
+                    <svg className="h-4 w-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <div className="text-left">
+                      <span className="font-medium">CSV Spreadsheet</span>
+                      <p className="text-[10px] text-white/40">Excel, Google Sheets, SPSS</p>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      exportGeoJSON(filteredAndSorted);
+                      setShowExportMenu(false);
+                    }}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-white/80 hover:bg-white/10 transition-colors"
+                  >
+                    <svg className="h-4 w-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div className="text-left">
+                      <span className="font-medium">GeoJSON</span>
+                      <p className="text-[10px] text-white/40">QGIS, ArcGIS, Mapbox, Leaflet</p>
+                    </div>
+                  </button>
+                  <div className="border-t border-white/10">
+                    <button
+                      onClick={() => {
+                        exportCSV(issues);
+                        setShowExportMenu(false);
+                      }}
+                      className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-white/50 hover:bg-white/10 transition-colors"
+                    >
+                      <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                      </svg>
+                      <div className="text-left">
+                        <span className="font-medium">Export All ({issues.length}) as CSV</span>
+                        <p className="text-[10px] text-white/30">Unfiltered complete dataset</p>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
@@ -199,6 +366,7 @@ export function WorkQueue({
               setFilterStatus("all");
               setFilterSeverity("all");
               setFilterCategory("all");
+              setFilterMonths(null);
               onClearFilter?.();
             }}
             className="text-xs text-trail-gold/70 hover:text-trail-gold transition-colors"
@@ -249,6 +417,7 @@ export function WorkQueue({
               key={opt.value}
               onClick={() => {
                 setFilterStatus(opt.value);
+                setFilterMonths(null);
                 onClearFilter?.(); // clear drilldown label when manually changing filters
               }}
               className={`whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium transition-colors min-h-[32px] ${
@@ -267,6 +436,7 @@ export function WorkQueue({
           value={filterCategory}
           onChange={(e) => {
             setFilterCategory(e.target.value as IssueCategory | "all");
+            setFilterMonths(null);
             onClearFilter?.();
           }}
           className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 focus:border-trail-gold/50 focus:outline-none min-h-[36px]"

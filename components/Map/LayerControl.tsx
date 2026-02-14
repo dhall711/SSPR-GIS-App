@@ -8,15 +8,33 @@ interface LayerControlProps {
   onToggle: (layerId: OverlayLayerId) => void;
 }
 
-const LAYER_OPTIONS: { id: OverlayLayerId; label: string; color: string; available: boolean; phase?: string }[] = [
-  { id: "district-boundary", label: "District Boundary", color: "#2d6a4f", available: true },
-  { id: "trails", label: "Trails", color: "#e63946", available: true },
-  { id: "parks", label: "Parks & Facilities", color: "#52b788", available: true },
-  { id: "waterways", label: "Waterways", color: "#219ebc", available: true },
-  { id: "municipal-boundaries", label: "Municipal Boundaries", color: "#6c757d", available: false, phase: "Phase 2" },
-  { id: "maintenance-issues", label: "Maintenance Issues", color: "#fb923c", available: true },
-  { id: "riparian-buffers", label: "Riparian Buffers", color: "#52b788", available: true },
-  { id: "heatmap", label: "Disturbance Heatmap", color: "#ef4444", available: true },
+const LAYER_GROUPS: { label: string; layers: { id: OverlayLayerId; label: string; color: string; available: boolean; phase?: string }[] }[] = [
+  {
+    label: "SSPR Layers",
+    layers: [
+      { id: "district-boundary", label: "District Boundary", color: "#2d6a4f", available: true },
+      { id: "trails", label: "Trails", color: "#e63946", available: true },
+      { id: "parks", label: "Parks & Facilities", color: "#52b788", available: true },
+      { id: "waterways", label: "Waterways", color: "#219ebc", available: true },
+      { id: "municipal-boundaries", label: "Municipal Boundaries", color: "#6c757d", available: false, phase: "Phase 2" },
+    ],
+  },
+  {
+    label: "Maintenance",
+    layers: [
+      { id: "maintenance-issues", label: "Maintenance Issues", color: "#fb923c", available: true },
+      { id: "riparian-buffers", label: "Riparian Buffers", color: "#52b788", available: true },
+      { id: "heatmap", label: "Disturbance Heatmap", color: "#ef4444", available: true },
+      { id: "priority-zones", label: "Priority Zones", color: "#f97316", available: true },
+    ],
+  },
+  {
+    label: "Regional Data",
+    layers: [
+      { id: "regional-parks", label: "Regional Parks", color: "#8b5cf6", available: true },
+      { id: "nhd-hydrology", label: "USGS Hydrology (NHD)", color: "#38bdf8", available: true },
+    ],
+  },
 ];
 
 export function LayerControl({ visibility, onToggle }: LayerControlProps) {
@@ -48,41 +66,45 @@ export function LayerControl({ visibility, onToggle }: LayerControlProps) {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 w-56 rounded-lg bg-white shadow-lg border border-gray-200 p-3">
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
-            Overlay Layers
-          </h3>
-          <div className="space-y-1">
-            {LAYER_OPTIONS.map((layer) => (
-              <label
-                key={layer.id}
-                className={`flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors ${
-                  layer.available
-                    ? "cursor-pointer hover:bg-gray-50"
-                    : "cursor-not-allowed opacity-40"
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={layer.available ? visibility[layer.id] : false}
-                  onChange={() => layer.available && onToggle(layer.id)}
-                  disabled={!layer.available}
-                  className="h-4 w-4 rounded border-gray-300"
-                  style={{ accentColor: layer.color }}
-                />
-                <span
-                  className="h-3 w-3 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: layer.color }}
-                />
-                <span className="text-sm text-gray-700">
-                  {layer.label}
-                  {!layer.available && (
-                    <span className="ml-1 text-[10px] text-gray-400">{layer.phase}</span>
-                  )}
-                </span>
-              </label>
-            ))}
-          </div>
+        <div className="absolute top-full left-0 mt-1 w-60 rounded-lg bg-white shadow-lg border border-gray-200 p-3 max-h-[70vh] overflow-y-auto">
+          {LAYER_GROUPS.map((group) => (
+            <div key={group.label} className="mb-2 last:mb-0">
+              <h3 className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+                {group.label}
+              </h3>
+              <div className="space-y-0.5">
+                {group.layers.map((layer) => (
+                  <label
+                    key={layer.id}
+                    className={`flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors ${
+                      layer.available
+                        ? "cursor-pointer hover:bg-gray-50"
+                        : "cursor-not-allowed opacity-40"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={layer.available ? visibility[layer.id] : false}
+                      onChange={() => layer.available && onToggle(layer.id)}
+                      disabled={!layer.available}
+                      className="h-4 w-4 rounded border-gray-300"
+                      style={{ accentColor: layer.color }}
+                    />
+                    <span
+                      className="h-3 w-3 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: layer.color }}
+                    />
+                    <span className="text-sm text-gray-700">
+                      {layer.label}
+                      {!layer.available && (
+                        <span className="ml-1 text-[10px] text-gray-400">{layer.phase}</span>
+                      )}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

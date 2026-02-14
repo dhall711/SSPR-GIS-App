@@ -25,8 +25,13 @@ import { BoundaryLayer } from "@/components/Layers/BoundaryLayer";
 import { MaintenanceLayer } from "@/components/Layers/MaintenanceLayer";
 import { HeatmapLayer } from "@/components/Layers/HeatmapLayer";
 import { BufferLayer, BufferControl } from "@/components/Layers/BufferLayer";
+import { RegionalParksLayer } from "@/components/Layers/RegionalParksLayer";
+import { NHDHydrologyLayer } from "@/components/Layers/NHDHydrologyLayer";
+import { PriorityZonesLayer, DEFAULT_PRIORITY_WEIGHTS } from "@/components/Layers/PriorityZonesLayer";
+import type { PriorityWeights } from "@/components/Layers/PriorityZonesLayer";
 import { BasemapSelector } from "./BasemapSelector";
 import { LayerControl } from "./LayerControl";
+import { PriorityControl } from "./PriorityControl";
 import { CoordinateDisplay } from "./CoordinateDisplay";
 
 import type { FeatureCollection } from "geojson";
@@ -140,6 +145,12 @@ export default function MapView({
   const [maintenanceData, setMaintenanceData] = useState<FeatureCollection>(localMaintenance);
   const [dataSource, setDataSource] = useState<"local" | "supabase">("local");
 
+  // External (Phase 4) data
+  const emptyFC: FeatureCollection = { type: "FeatureCollection", features: [] };
+  const [regionalParksData, setRegionalParksData] = useState<FeatureCollection>(emptyFC);
+  const [nhdData, setNhdData] = useState<FeatureCollection>(emptyFC);
+  const [priorityWeights, setPriorityWeights] = useState<PriorityWeights>(DEFAULT_PRIORITY_WEIGHTS);
+
   // Riparian buffer state
   const [bufferWaterwayId, setBufferWaterwayId] = useState<string | null>(null);
   const [bufferMeters, setBufferMeters] = useState(100);
@@ -180,6 +191,38 @@ export default function MapView({
       if (anyLoaded) setDataSource("supabase");
     });
   }, []);
+
+  // Fetch external data when layers are enabled (lazy load)
+  useEffect(() => {
+    if (
+      (layerVisibility["regional-parks"] && regionalParksData.features.length === 0) ||
+      (layerVisibility["nhd-hydrology"] && nhdData.features.length === 0)
+    ) {
+      const fetchExternal = async () => {
+        try {
+          const res = await fetch("/api/external?source=all");
+          if (!res.ok) return;
+          const data = await res.json();
+          if (data.denverParks?.features || data.arapahoeParks?.features) {
+            const combined: FeatureCollection = {
+              type: "FeatureCollection",
+              features: [
+                ...(data.denverParks?.features || []),
+                ...(data.arapahoeParks?.features || []),
+              ],
+            };
+            setRegionalParksData(combined);
+          }
+          if (data.nhdFlowlines?.features?.length > 0) {
+            setNhdData(data.nhdFlowlines);
+          }
+        } catch {
+          // External data is non-critical
+        }
+      };
+      fetchExternal();
+    }
+  }, [layerVisibility, regionalParksData.features.length, nhdData.features.length]);
 
   const currentBasemap = basemaps.find((b) => b.id === activeBasemap) || basemaps[0];
 
@@ -265,6 +308,25 @@ export default function MapView({
             onClose={() => setBufferWaterwayId(null)}
           />
         )}
+
+        {/* Phase 4: External data layers */}
+        {layerVisibility["regional-parks"] && regionalParksData.features.length > 0 && (
+          <RegionalParksLayer
+            data={regionalParksData}
+            onFeatureClick={handleFeatureClick}
+          />
+        )}
+        {layerVisibility["nhd-hydrology"] && nhdData.features.length > 0 && (
+          <NHDHydrologyLayer data={nhdData} />
+        )}
+        {layerVisibility["priority-zones"] && (
+          <PriorityZonesLayer
+            issueData={maintenanceData}
+            waterwayData={waterwaysData}
+            trailData={trailsData}
+            weights={priorityWeights}
+          />
+        )}
       </MapContainer>
 
       {/* Basemap selector (top-left) */}
@@ -297,6 +359,15 @@ export default function MapView({
           />
         </div>
       )}
+
+      {/* Priority weights control (when priority zones layer is active) */}
+      <div className={`absolute ${showBufferControl ? "top-80" : "top-52"} left-3 z-[1000]`}>
+        <PriorityControl
+          weights={priorityWeights}
+          onWeightsChange={setPriorityWeights}
+          isVisible={layerVisibility["priority-zones"]}
+        />
+      </div>
 
       {/* Coordinate display (bottom-left) */}
       <div className="absolute bottom-6 left-3 z-[1000]">

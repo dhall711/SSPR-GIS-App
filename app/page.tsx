@@ -64,7 +64,7 @@ export default function HomePage() {
   const [flyToTarget, setFlyToTarget] = useState<{ lat: number; lng: number; zoom?: number } | null>(null);
 
   // Desktop right panel tab
-  const [desktopRightPanel, setDesktopRightPanel] = useState<"none" | "tasks" | "detail" | "stats">("none");
+  const [desktopRightPanel, setDesktopRightPanel] = useState<"none" | "report" | "tasks" | "detail" | "stats">("none");
 
   // Drilldown filter (from Stats -> Tasks navigation)
   const [drilldownFilter, setDrilldownFilter] = useState<StatsFilter | null>(null);
@@ -467,13 +467,32 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </button>
+            {/* Desktop Report Panel Toggle */}
+            <button
+              onClick={() => {
+                setDesktopRightPanel((prev) =>
+                  prev === "report" ? "none" : "report"
+                );
+                setIsChatOpen(false);
+              }}
+              className={`hidden md:flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors min-h-[36px] ${
+                desktopRightPanel === "report"
+                  ? "bg-trail-gold text-trail-green-dark"
+                  : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+              }`}
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Report</span>
+            </button>
             {/* Desktop Tasks Panel Toggle */}
             <button
               onClick={() => {
                 setDesktopRightPanel((prev) =>
                   prev === "tasks" ? "none" : "tasks"
                 );
-                setIsChatOpen(false); // close chat when opening side panel
+                setIsChatOpen(false);
               }}
               className={`hidden md:flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors min-h-[36px] ${
                 desktopRightPanel === "tasks"
@@ -497,7 +516,7 @@ export default function HomePage() {
                 setDesktopRightPanel((prev) =>
                   prev === "stats" ? "none" : "stats"
                 );
-                setIsChatOpen(false); // close chat when opening side panel
+                setIsChatOpen(false);
               }}
               className={`hidden md:flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors min-h-[36px] ${
                 desktopRightPanel === "stats"
@@ -582,6 +601,7 @@ export default function HomePage() {
                   initialStatus={drilldownFilter?.status}
                   initialSeverity={drilldownFilter?.severity}
                   initialCategory={drilldownFilter?.category}
+                  initialMonths={drilldownFilter?.months}
                   filterLabel={drilldownFilter?.label}
                   onClearFilter={handleClearDrilldown}
                 />
@@ -618,10 +638,15 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* ======= DESKTOP: Right Panel (Tasks / Issue Detail / Stats) ======= */}
+      {/* ======= DESKTOP: Right Panel (Report / Tasks / Issue Detail / Stats) ======= */}
       {desktopRightPanel !== "none" && (
         <aside className="hidden md:flex md:w-96 md:flex-col md:flex-shrink-0 bg-sidebar-bg border-l border-sidebar-border overflow-hidden">
-          {desktopRightPanel === "detail" && selectedIssue ? (
+          {desktopRightPanel === "report" ? (
+            <QuickReport
+              onSubmit={handleReportSubmit}
+              onFieldTip={triggerFieldTip}
+            />
+          ) : desktopRightPanel === "detail" && selectedIssue ? (
             <IssueDetail
               issue={selectedIssue}
               onClose={handleCloseIssueDetail}
@@ -644,6 +669,7 @@ export default function HomePage() {
               initialStatus={drilldownFilter?.status}
               initialSeverity={drilldownFilter?.severity}
               initialCategory={drilldownFilter?.category}
+              initialMonths={drilldownFilter?.months}
               filterLabel={drilldownFilter?.label}
               onClearFilter={handleClearDrilldown}
             />

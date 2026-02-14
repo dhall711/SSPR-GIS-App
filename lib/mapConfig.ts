@@ -69,6 +69,9 @@ export const DEFAULT_LAYER_VISIBILITY: LayerVisibility = {
   "maintenance-issues": true,
   "riparian-buffers": false,
   heatmap: false,
+  "regional-parks": false,
+  "nhd-hydrology": false,
+  "priority-zones": false,
 };
 
 // Trail colors by letter code

@@ -13,6 +13,7 @@ export interface StatsFilter {
   status?: string;
   severity?: string;
   category?: string;
+  months?: number[];  // filter by reportedAt month (0-11)
   label: string;
 }
 
@@ -49,6 +50,12 @@ function StatBar({ label, value, total, color, onClick }: { label: string; value
 const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const SEASON_NAMES = ["Winter", "Spring", "Summer", "Fall"];
 const SEASON_COLORS = ["#93c5fd", "#4ade80", "#facc15", "#fb923c"];
+const SEASON_MONTHS: number[][] = [
+  [11, 0, 1],   // Winter: Dec, Jan, Feb
+  [2, 3, 4],    // Spring: Mar, Apr, May
+  [5, 6, 7],    // Summer: Jun, Jul, Aug
+  [8, 9, 10],   // Fall: Sep, Oct, Nov
+];
 
 function getSeason(month: number): number {
   if (month === 11 || month <= 1) return 0; // Winter: Dec, Jan, Feb
@@ -371,10 +378,14 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                   const season = getSeason(i);
                   const isCurrentMonth = i === new Date().getMonth();
                   return (
-                    <div key={i} className="flex-1 flex flex-col items-center gap-0.5">
+                    <button
+                      key={i}
+                      onClick={() => count > 0 && onDrillDown?.({ months: [i], label: `${MONTH_NAMES[i]} Issues (${count})` })}
+                      className={`flex-1 flex flex-col items-center gap-0.5 ${count > 0 ? "cursor-pointer" : "cursor-default"}`}
+                    >
                       <span className="text-[8px] text-white/30">{count || ""}</span>
                       <div
-                        className={`w-full rounded-sm transition-all duration-300 ${isCurrentMonth ? "ring-1 ring-white/40" : ""}`}
+                        className={`w-full rounded-sm transition-all duration-300 ${isCurrentMonth ? "ring-1 ring-white/40" : ""} ${count > 0 ? "hover:opacity-100" : ""}`}
                         style={{
                           height: `${Math.max(height, 3)}%`,
                           backgroundColor: SEASON_COLORS[season],
@@ -384,7 +395,7 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                       <span className={`text-[8px] ${isCurrentMonth ? "text-white font-bold" : "text-white/25"}`}>
                         {MONTH_NAMES[i]}
                       </span>
-                    </div>
+                    </button>
                   );
                 })}
               </div>
@@ -409,10 +420,12 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                   const count = stats.bySeason[i];
                   const top = stats.seasonTopCategory[i];
                   const isCurrent = i === currentSeason;
+                  const seasonMonths = SEASON_MONTHS[i];
                   return (
-                    <div
+                    <button
                       key={name}
-                      className={`rounded-lg border px-3 py-2 ${isCurrent ? "border-white/20 bg-white/5" : "border-white/5 bg-white/[0.02]"}`}
+                      onClick={() => onDrillDown?.({ months: seasonMonths, label: `${name} Issues (${count})` })}
+                      className={`w-full text-left rounded-lg border px-3 py-2 transition-colors ${isCurrent ? "border-white/20 bg-white/5 hover:bg-white/10" : "border-white/5 bg-white/[0.02] hover:bg-white/5"}`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -422,7 +435,12 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                             {isCurrent && <span className="ml-1.5 text-[9px] text-trail-gold">(now)</span>}
                           </span>
                         </div>
-                        <span className="text-sm font-mono text-white/50">{count}</span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-sm font-mono text-white/50">{count}</span>
+                          <svg className="h-3 w-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </div>
                       {top && (
                         <div className="mt-1 flex items-center gap-1.5">
@@ -432,7 +450,7 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                           </span>
                         </div>
                       )}
-                    </div>
+                    </button>
                   );
                 })}
               </div>
@@ -471,8 +489,13 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                             const intensity = val / maxInRow;
                             return (
                               <td key={s} className="text-center py-0.5 px-1">
-                                <div
-                                  className="mx-auto rounded-sm h-5 w-full flex items-center justify-center"
+                                <button
+                                  onClick={() => val > 0 && onDrillDown?.({
+                                    category: cat,
+                                    months: SEASON_MONTHS[s],
+                                    label: `${ISSUE_CATEGORY_LABELS[cat as IssueCategory] || cat} in ${SEASON_NAMES[s]} (${val})`,
+                                  })}
+                                  className={`mx-auto rounded-sm h-5 w-full flex items-center justify-center transition-opacity ${val > 0 ? "hover:opacity-100 cursor-pointer" : "cursor-default"}`}
                                   style={{
                                     backgroundColor: val > 0 ? CATEGORY_COLORS[cat] || "#666" : "transparent",
                                     opacity: val > 0 ? 0.2 + intensity * 0.6 : 0.05,
@@ -481,7 +504,7 @@ export function StatsPanel({ issues, onClose, onDrillDown }: StatsPanelProps) {
                                   <span className={`text-[9px] font-mono ${val > 0 ? "text-white" : "text-white/20"}`}>
                                     {val || "-"}
                                   </span>
-                                </div>
+                                </button>
                               </td>
                             );
                           })}

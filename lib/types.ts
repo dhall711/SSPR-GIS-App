@@ -199,7 +199,10 @@ export type OverlayLayerId =
   | "municipal-boundaries"
   | "maintenance-issues"
   | "riparian-buffers"
-  | "heatmap";
+  | "heatmap"
+  | "regional-parks"
+  | "nhd-hydrology"
+  | "priority-zones";
 
 export interface LayerVisibility {
   trails: boolean;
@@ -210,6 +213,9 @@ export interface LayerVisibility {
   "maintenance-issues": boolean;
   "riparian-buffers": boolean;
   heatmap: boolean;
+  "regional-parks": boolean;
+  "nhd-hydrology": boolean;
+  "priority-zones": boolean;
 }
 
 // ============================================================

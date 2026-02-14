@@ -1,0 +1,278 @@
+"use client";
+
+import { useState, useCallback, useEffect, useRef } from "react";
+import {
+  MapContainer,
+  TileLayer,
+  ZoomControl,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
+import {
+  SSPR_CENTER,
+  SSPR_DEFAULT_ZOOM,
+  SSPR_MIN_ZOOM,
+  SSPR_MAX_ZOOM,
+  getBasemaps,
+} from "@/lib/mapConfig";
+import { BasemapId, LayerVisibility, OverlayLayerId } from "@/lib/types";
+import { TrailLayer } from "@/components/Layers/TrailLayer";
+import { ParkLayer } from "@/components/Layers/ParkLayer";
+import { WaterwayLayer } from "@/components/Layers/WaterwayLayer";
+import { BoundaryLayer } from "@/components/Layers/BoundaryLayer";
+import { MaintenanceLayer } from "@/components/Layers/MaintenanceLayer";
+import { HeatmapLayer } from "@/components/Layers/HeatmapLayer";
+import { BufferLayer, BufferControl } from "@/components/Layers/BufferLayer";
+import { BasemapSelector } from "./BasemapSelector";
+import { LayerControl } from "./LayerControl";
+import { CoordinateDisplay } from "./CoordinateDisplay";
+
+import type { FeatureCollection } from "geojson";
+
+// Local JSON as fast initial data (renders instantly while Supabase loads)
+import _trailsData from "@/data/geojson/trails.json";
+import _parksData from "@/data/geojson/parks.json";
+import _waterwaysData from "@/data/geojson/waterways.json";
+import _boundaryData from "@/data/geojson/district_boundary.json";
+import _maintenanceData from "@/data/seed/maintenance-issues.json";
+
+const localTrails = _trailsData as unknown as FeatureCollection;
+const localParks = _parksData as unknown as FeatureCollection;
+const localWaterways = _waterwaysData as unknown as FeatureCollection;
+const localBoundary = _boundaryData as unknown as FeatureCollection;
+const localMaintenance = _maintenanceData as unknown as FeatureCollection;
+
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
+interface MapViewProps {
+  layerVisibility: LayerVisibility;
+  onLayerToggle: (layerId: OverlayLayerId) => void;
+  onFeatureSelect: (feature: { type: string; id: string; name: string } | null) => void;
+  highlightFeatureId?: string | null;
+  flyTo?: { lat: number; lng: number; zoom?: number } | null;
+}
+
+function MapEventHandler({
+  onCoordinateUpdate,
+}: {
+  onCoordinateUpdate: (lat: number, lng: number) => void;
+}) {
+  useMapEvents({
+    mousemove: (e) => {
+      onCoordinateUpdate(e.latlng.lat, e.latlng.lng);
+    },
+  });
+  return null;
+}
+
+/** Imperatively fly the map to a location when the `target` prop changes. */
+function FlyToHandler({ target }: { target: { lat: number; lng: number; zoom?: number } | null }) {
+  const map = useMap();
+  const prevTarget = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!target) return;
+    const key = `${target.lat},${target.lng}`;
+    if (key === prevTarget.current) return;
+    prevTarget.current = key;
+    map.flyTo([target.lat, target.lng], target.zoom ?? 16, { duration: 1.2 });
+  }, [target, map]);
+
+  return null;
+}
+
+export default function MapView({
+  layerVisibility,
+  onLayerToggle,
+  onFeatureSelect,
+  highlightFeatureId,
+  flyTo,
+}: MapViewProps) {
+  const basemaps = getBasemaps();
+  const [activeBasemap, setActiveBasemap] = useState<BasemapId>("osm");
+  const [mouseCoords, setMouseCoords] = useState<{ lat: number; lng: number } | null>(null);
+
+  // Live data from Supabase (starts with local JSON, upgrades when Supabase responds)
+  const [trailsData, setTrailsData] = useState<FeatureCollection>(localTrails);
+  const [parksData, setParksData] = useState<FeatureCollection>(localParks);
+  const [waterwaysData, setWaterwaysData] = useState<FeatureCollection>(localWaterways);
+  const [boundaryData, setBoundaryData] = useState<FeatureCollection>(localBoundary);
+  const [maintenanceData, setMaintenanceData] = useState<FeatureCollection>(localMaintenance);
+  const [dataSource, setDataSource] = useState<"local" | "supabase">("local");
+
+  // Riparian buffer state
+  const [bufferWaterwayId, setBufferWaterwayId] = useState<string | null>(null);
+  const [bufferMeters, setBufferMeters] = useState(100);
+  const showBufferControl = layerVisibility["riparian-buffers"];
+
+  // Fetch live data from Supabase on mount
+  useEffect(() => {
+    if (!SUPABASE_URL) return; // no Supabase configured, stay with local data
+
+    const fetchLayer = async (layer: string): Promise<FeatureCollection | null> => {
+      try {
+        const res = await fetch(`/api/spatial?layer=${layer}`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        // Validate it looks like a FeatureCollection
+        if (data?.type === "FeatureCollection" && Array.isArray(data.features)) {
+          return data as FeatureCollection;
+        }
+        return null;
+      } catch {
+        return null;
+      }
+    };
+
+    Promise.all([
+      fetchLayer("trails"),
+      fetchLayer("parks"),
+      fetchLayer("waterways"),
+      fetchLayer("boundaries"),
+      fetchLayer("issues"),
+    ]).then(([trails, parks, waterways, boundaries, issues]) => {
+      if (trails && trails.features.length > 0) setTrailsData(trails);
+      if (parks && parks.features.length > 0) setParksData(parks);
+      if (waterways && waterways.features.length > 0) setWaterwaysData(waterways);
+      if (boundaries && boundaries.features.length > 0) setBoundaryData(boundaries);
+      if (issues && issues.features.length > 0) setMaintenanceData(issues);
+      setDataSource("supabase");
+    });
+  }, []);
+
+  const currentBasemap = basemaps.find((b) => b.id === activeBasemap) || basemaps[0];
+
+  const handleCoordinateUpdate = useCallback((lat: number, lng: number) => {
+    setMouseCoords({ lat, lng });
+  }, []);
+
+  const handleFeatureClick = useCallback(
+    (type: string, id: string, name: string) => {
+      onFeatureSelect({ type, id, name });
+    },
+    [onFeatureSelect]
+  );
+
+  return (
+    <div className="relative h-full w-full">
+      <MapContainer
+        center={SSPR_CENTER}
+        zoom={SSPR_DEFAULT_ZOOM}
+        minZoom={SSPR_MIN_ZOOM}
+        maxZoom={SSPR_MAX_ZOOM}
+        zoomControl={false}
+        className="h-full w-full"
+      >
+        <ZoomControl position="topright" />
+
+        {/* Active basemap tile layer */}
+        <TileLayer
+          key={currentBasemap.id}
+          url={currentBasemap.url}
+          attribution={currentBasemap.attribution}
+          maxZoom={currentBasemap.maxZoom}
+        />
+
+        {/* Coordinate tracker */}
+        <MapEventHandler onCoordinateUpdate={handleCoordinateUpdate} />
+
+        {/* Fly-to handler */}
+        <FlyToHandler target={flyTo ?? null} />
+
+        {/* Overlay layers */}
+        {layerVisibility["district-boundary"] && (
+          <BoundaryLayer data={boundaryData} />
+        )}
+        {layerVisibility.waterways && (
+          <WaterwayLayer
+            data={waterwaysData}
+            onFeatureClick={handleFeatureClick}
+          />
+        )}
+        {layerVisibility.trails && (
+          <TrailLayer
+            data={trailsData}
+            issueData={maintenanceData}
+            onFeatureClick={handleFeatureClick}
+            highlightId={highlightFeatureId}
+          />
+        )}
+        {layerVisibility.parks && (
+          <ParkLayer
+            data={parksData}
+            issueData={maintenanceData}
+            onFeatureClick={handleFeatureClick}
+            highlightId={highlightFeatureId}
+          />
+        )}
+        {layerVisibility["maintenance-issues"] && (
+          <MaintenanceLayer
+            data={maintenanceData}
+            waterwayData={waterwaysData}
+            onFeatureClick={handleFeatureClick}
+            highlightId={highlightFeatureId}
+          />
+        )}
+        {layerVisibility.heatmap && (
+          <HeatmapLayer data={maintenanceData} />
+        )}
+        {layerVisibility["riparian-buffers"] && bufferWaterwayId && (
+          <BufferLayer
+            waterwayId={bufferWaterwayId}
+            bufferMeters={bufferMeters}
+            onClose={() => setBufferWaterwayId(null)}
+          />
+        )}
+      </MapContainer>
+
+      {/* Basemap selector (top-left) */}
+      <div className="absolute top-3 left-3 z-[1000]">
+        <BasemapSelector
+          basemaps={basemaps}
+          activeId={activeBasemap}
+          onChange={setActiveBasemap}
+        />
+      </div>
+
+      {/* Layer control (top-left, below basemap) */}
+      <div className="absolute top-16 left-3 z-[1000]">
+        <LayerControl
+          visibility={layerVisibility}
+          onToggle={onLayerToggle}
+        />
+      </div>
+
+      {/* Buffer control (below layer control, when active) */}
+      {showBufferControl && (
+        <div className="absolute top-52 left-3 z-[1000]">
+          <BufferControl
+            isActive={showBufferControl}
+            waterwayId={bufferWaterwayId}
+            bufferMeters={bufferMeters}
+            onWaterwayChange={setBufferWaterwayId}
+            onBufferChange={setBufferMeters}
+            onToggle={() => onLayerToggle("riparian-buffers")}
+          />
+        </div>
+      )}
+
+      {/* Coordinate display (bottom-left) */}
+      <div className="absolute bottom-6 left-3 z-[1000]">
+        <CoordinateDisplay coords={mouseCoords} />
+      </div>
+
+      {/* Data source indicator */}
+      <div className="absolute bottom-6 right-3 z-[1000]">
+        <span className={`text-[10px] px-2 py-0.5 rounded-full ${
+          dataSource === "supabase"
+            ? "bg-green-500/20 text-green-400 border border-green-500/30"
+            : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+        }`}>
+          {dataSource === "supabase" ? "Live" : "Local"}
+        </span>
+      </div>
+    </div>
+  );
+}

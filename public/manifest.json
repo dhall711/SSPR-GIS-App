@@ -1,0 +1,20 @@
+{
+  "name": "SSPR Trail Explorer",
+  "short_name": "Trail Explorer",
+  "description": "Field maintenance & GIS learning for SSPR trail system",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1a12",
+  "theme_color": "#2d6a4f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "education"],
+  "lang": "en-US"
+}

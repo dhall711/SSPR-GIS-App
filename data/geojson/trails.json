@@ -1,0 +1,442 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "bear-creek",
+      "properties": {
+        "id": "bear-creek",
+        "name": "Bear Creek Trail",
+        "letterCode": "A",
+        "lengthMiles": 1.6,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "E-1",
+        "gridEnd": "F-1",
+        "watershed": "Bear Creek",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Follows Bear Creek from Sheridan west, connecting to the South Platte River via Mary Carter Greenway."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0250, 39.6440],
+          [-105.0210, 39.6435],
+          [-105.0170, 39.6430],
+          [-105.0130, 39.6425],
+          [-105.0100, 39.6418],
+          [-105.0060, 39.6410],
+          [-105.0020, 39.6400]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "big-dry-creek-north",
+      "properties": {
+        "id": "big-dry-creek-north",
+        "name": "Big Dry Creek Trail (North)",
+        "letterCode": "B",
+        "lengthMiles": 2.5,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "F-3",
+        "gridEnd": "F-3",
+        "watershed": "Big Dry Creek",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Northern section of the Big Dry Creek corridor, following the creek through residential areas of Littleton."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0160, 39.6250],
+          [-105.0140, 39.6230],
+          [-105.0110, 39.6200],
+          [-105.0080, 39.6180],
+          [-105.0050, 39.6160],
+          [-105.0020, 39.6140],
+          [-104.9990, 39.6120],
+          [-104.9960, 39.6100]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "big-dry-creek-south",
+      "properties": {
+        "id": "big-dry-creek-south",
+        "name": "Big Dry Creek Trail (South)",
+        "letterCode": "C",
+        "lengthMiles": 2.1,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "I-5",
+        "gridEnd": "I-5",
+        "watershed": "Big Dry Creek",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Southern section of Big Dry Creek Trail, continuing through Centennial neighborhoods."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9580, 39.5900],
+          [-104.9550, 39.5880],
+          [-104.9520, 39.5860],
+          [-104.9490, 39.5840],
+          [-104.9460, 39.5820],
+          [-104.9430, 39.5800]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "centennial-link",
+      "properties": {
+        "id": "centennial-link",
+        "name": "Centennial Link Trail",
+        "letterCode": "D",
+        "lengthMiles": 5.7,
+        "surface": "paved",
+        "difficulty": "moderate",
+        "gridStart": "K-4",
+        "gridEnd": "G-5",
+        "watershed": "Big Dry Creek",
+        "riparianProximity": "near",
+        "habitatCorridor": false,
+        "description": "Major east-west connector linking Centennial neighborhoods to the broader trail network."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9200, 39.6100],
+          [-104.9300, 39.6080],
+          [-104.9400, 39.6060],
+          [-104.9500, 39.6040],
+          [-104.9600, 39.6020],
+          [-104.9700, 39.6000],
+          [-104.9800, 39.5980],
+          [-104.9900, 39.5960],
+          [-105.0000, 39.5940]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "columbine",
+      "properties": {
+        "id": "columbine",
+        "name": "Columbine Trail",
+        "letterCode": "E",
+        "lengthMiles": 2.6,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "D-6",
+        "gridEnd": "D-6",
+        "watershed": "South Platte River",
+        "riparianProximity": "near",
+        "habitatCorridor": false,
+        "description": "Runs through the Columbine area near South Platte Park, connecting neighborhoods to open spaces."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0400, 39.5700],
+          [-105.0380, 39.5720],
+          [-105.0360, 39.5740],
+          [-105.0340, 39.5760],
+          [-105.0320, 39.5780],
+          [-105.0300, 39.5800],
+          [-105.0280, 39.5820]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cook-creek",
+      "properties": {
+        "id": "cook-creek",
+        "name": "Cook Creek Regional Trail",
+        "letterCode": "F",
+        "lengthMiles": 1.9,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "L-9",
+        "gridEnd": "L-8",
+        "watershed": "South Platte River",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Follows Cook Creek through Lone Tree, connecting Ridgegate area parks and open spaces."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.8900, 39.5350],
+          [-104.8920, 39.5380],
+          [-104.8940, 39.5410],
+          [-104.8960, 39.5440],
+          [-104.8980, 39.5470]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "happy-canyon",
+      "properties": {
+        "id": "happy-canyon",
+        "name": "Happy Canyon Regional Trail",
+        "letterCode": "G",
+        "lengthMiles": 1.9,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "N-9",
+        "gridEnd": "M-10",
+        "watershed": "South Platte River",
+        "riparianProximity": "near",
+        "habitatCorridor": false,
+        "description": "Connects the eastern portion of the district near Lone Tree to regional trail networks."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.8600, 39.5400],
+          [-104.8650, 39.5370],
+          [-104.8700, 39.5340],
+          [-104.8750, 39.5310],
+          [-104.8800, 39.5280]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "highline-canal",
+      "properties": {
+        "id": "highline-canal",
+        "name": "High Line Canal Trail",
+        "letterCode": "H",
+        "lengthMiles": 9.0,
+        "surface": "crushed granite",
+        "difficulty": "easy",
+        "gridStart": "G-7",
+        "gridEnd": "G-7",
+        "watershed": "South Platte River",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Historic 71-mile irrigation canal trail. This 9-mile segment passes through the SSPR district, serving as a critical urban wildlife corridor with mature cottonwood canopy."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9450, 39.6310],
+          [-104.9480, 39.6270],
+          [-104.9510, 39.6230],
+          [-104.9540, 39.6180],
+          [-104.9570, 39.6130],
+          [-104.9600, 39.6070],
+          [-104.9630, 39.6010],
+          [-104.9660, 39.5950],
+          [-104.9690, 39.5890],
+          [-104.9720, 39.5830],
+          [-104.9750, 39.5770],
+          [-104.9780, 39.5710],
+          [-104.9810, 39.5660]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lee-gulch",
+      "properties": {
+        "id": "lee-gulch",
+        "name": "Lee Gulch Trail",
+        "letterCode": "I",
+        "lengthMiles": 4.6,
+        "surface": "paved",
+        "difficulty": "moderate",
+        "gridStart": "E-5",
+        "gridEnd": "H-6",
+        "watershed": "Lee Gulch",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Follows Lee Gulch drainage from the South Platte River eastward, a natural wildlife corridor connecting riparian and upland habitats."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0100, 39.5880],
+          [-105.0050, 39.5870],
+          [-105.0000, 39.5860],
+          [-104.9940, 39.5850],
+          [-104.9880, 39.5840],
+          [-104.9820, 39.5830],
+          [-104.9760, 39.5820],
+          [-104.9700, 39.5810],
+          [-104.9640, 39.5790],
+          [-104.9580, 39.5770]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "little-dry-creek",
+      "properties": {
+        "id": "little-dry-creek",
+        "name": "Little Dry Creek Trail",
+        "letterCode": "J",
+        "lengthMiles": 2.4,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "J-5",
+        "gridEnd": "J-5",
+        "watershed": "Little Dry Creek",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Follows Little Dry Creek through Centennial, an important tributary corridor with riparian vegetation."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9400, 39.5900],
+          [-104.9380, 39.5880],
+          [-104.9350, 39.5860],
+          [-104.9320, 39.5840],
+          [-104.9290, 39.5820],
+          [-104.9260, 39.5800]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "littleton-community",
+      "properties": {
+        "id": "littleton-community",
+        "name": "Littleton Community Trail",
+        "letterCode": "K",
+        "lengthMiles": 2.7,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "F-5",
+        "gridEnd": "F-3",
+        "watershed": "South Platte River",
+        "riparianProximity": "near",
+        "habitatCorridor": false,
+        "description": "Urban community trail connecting Littleton neighborhoods, parks, and schools."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0050, 39.5880],
+          [-105.0040, 39.5920],
+          [-105.0030, 39.5960],
+          [-105.0020, 39.6000],
+          [-105.0010, 39.6040],
+          [-105.0000, 39.6080],
+          [-104.9990, 39.6120]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mary-carter-greenway",
+      "properties": {
+        "id": "mary-carter-greenway",
+        "name": "Mary Carter Greenway Trail",
+        "letterCode": "L",
+        "lengthMiles": 8.5,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "E-7",
+        "gridEnd": "E-7",
+        "watershed": "South Platte River",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "The spine of the SSPR trail system, following the South Platte River for 8.5 miles through South Platte Park. Passes Carson Nature Center and the only unchannelized section of the river in metro Denver."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0139, 39.6400],
+          [-105.0145, 39.6340],
+          [-105.0150, 39.6280],
+          [-105.0148, 39.6220],
+          [-105.0140, 39.6160],
+          [-105.0135, 39.6100],
+          [-105.0139, 39.6040],
+          [-105.0142, 39.5963],
+          [-105.0140, 39.5900],
+          [-105.0135, 39.5840],
+          [-105.0130, 39.5780],
+          [-105.0125, 39.5720],
+          [-105.0120, 39.5660],
+          [-105.0115, 39.5600],
+          [-105.0110, 39.5540]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "railroad-spur",
+      "properties": {
+        "id": "railroad-spur",
+        "name": "Railroad Spur / Mineral Ave Trail",
+        "letterCode": "M",
+        "lengthMiles": 2.5,
+        "surface": "paved",
+        "difficulty": "easy",
+        "gridStart": "D-6",
+        "gridEnd": "F-6",
+        "watershed": "South Platte River",
+        "riparianProximity": "far",
+        "habitatCorridor": false,
+        "description": "Follows a former railroad grade along Mineral Avenue, a flat east-west connector trail."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0350, 39.5760],
+          [-105.0280, 39.5760],
+          [-105.0200, 39.5760],
+          [-105.0120, 39.5760],
+          [-105.0040, 39.5760],
+          [-104.9960, 39.5760]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "willow-creek",
+      "properties": {
+        "id": "willow-creek",
+        "name": "Willow Creek Trail",
+        "letterCode": "N",
+        "lengthMiles": 7.0,
+        "surface": "paved",
+        "difficulty": "moderate",
+        "gridStart": "K-5",
+        "gridEnd": "K-5",
+        "watershed": "Willow Creek",
+        "riparianProximity": "adjacent",
+        "habitatCorridor": true,
+        "description": "Follows Willow Creek through Centennial and Lone Tree, connecting numerous parks along its 7-mile length. Important wildlife corridor."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9200, 39.5950],
+          [-104.9180, 39.5910],
+          [-104.9160, 39.5870],
+          [-104.9140, 39.5830],
+          [-104.9120, 39.5790],
+          [-104.9100, 39.5750],
+          [-104.9080, 39.5700],
+          [-104.9060, 39.5650],
+          [-104.9040, 39.5600],
+          [-104.9020, 39.5550],
+          [-104.9000, 39.5500]
+        ]
+      }
+    }
+  ]
+}

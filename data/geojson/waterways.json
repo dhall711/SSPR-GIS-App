@@ -1,0 +1,181 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "south-platte-river",
+      "properties": {
+        "id": "south-platte-river",
+        "name": "South Platte River",
+        "type": "river",
+        "streamOrder": 5,
+        "watershed": "South Platte River"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0139, 39.6500],
+          [-105.0142, 39.6420],
+          [-105.0145, 39.6340],
+          [-105.0150, 39.6260],
+          [-105.0148, 39.6180],
+          [-105.0142, 39.6100],
+          [-105.0140, 39.6020],
+          [-105.0142, 39.5963],
+          [-105.0145, 39.5900],
+          [-105.0140, 39.5830],
+          [-105.0135, 39.5760],
+          [-105.0130, 39.5690],
+          [-105.0125, 39.5620],
+          [-105.0120, 39.5550],
+          [-105.0115, 39.5480],
+          [-105.0110, 39.5400],
+          [-105.0730, 39.5340]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "big-dry-creek",
+      "properties": {
+        "id": "big-dry-creek",
+        "name": "Big Dry Creek",
+        "type": "creek",
+        "streamOrder": 3,
+        "watershed": "Big Dry Creek"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9400, 39.5800],
+          [-104.9500, 39.5830],
+          [-104.9600, 39.5860],
+          [-104.9700, 39.5890],
+          [-104.9800, 39.5920],
+          [-104.9900, 39.5960],
+          [-105.0000, 39.6000],
+          [-105.0050, 39.6040],
+          [-105.0100, 39.6090],
+          [-105.0140, 39.6140]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "little-dry-creek",
+      "properties": {
+        "id": "little-dry-creek",
+        "name": "Little Dry Creek",
+        "type": "creek",
+        "streamOrder": 2,
+        "watershed": "Little Dry Creek"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9200, 39.5800],
+          [-104.9280, 39.5830],
+          [-104.9360, 39.5860],
+          [-104.9440, 39.5890],
+          [-104.9520, 39.5920],
+          [-104.9600, 39.5950]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bear-creek",
+      "properties": {
+        "id": "bear-creek-waterway",
+        "name": "Bear Creek",
+        "type": "creek",
+        "streamOrder": 3,
+        "watershed": "Bear Creek"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0500, 39.6450],
+          [-105.0400, 39.6445],
+          [-105.0300, 39.6440],
+          [-105.0200, 39.6435],
+          [-105.0100, 39.6420],
+          [-105.0000, 39.6400],
+          [-104.9900, 39.6390]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dutch-creek",
+      "properties": {
+        "id": "dutch-creek",
+        "name": "Dutch Creek",
+        "type": "creek",
+        "streamOrder": 2,
+        "watershed": "Dutch Creek"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-105.0600, 39.6100],
+          [-105.0500, 39.6090],
+          [-105.0400, 39.6070],
+          [-105.0300, 39.6050],
+          [-105.0200, 39.6030],
+          [-105.0140, 39.6010]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "marcy-gulch",
+      "properties": {
+        "id": "marcy-gulch",
+        "name": "Marcy Gulch",
+        "type": "gulch",
+        "streamOrder": 1,
+        "watershed": "South Platte River"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9800, 39.5700],
+          [-104.9850, 39.5720],
+          [-104.9900, 39.5740],
+          [-104.9950, 39.5750],
+          [-105.0000, 39.5760],
+          [-105.0100, 39.5770]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "highline-canal-waterway",
+      "properties": {
+        "id": "highline-canal-waterway",
+        "name": "High Line Canal",
+        "type": "canal",
+        "streamOrder": null,
+        "watershed": "South Platte River"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-104.9450, 39.6350],
+          [-104.9480, 39.6300],
+          [-104.9510, 39.6250],
+          [-104.9540, 39.6200],
+          [-104.9570, 39.6150],
+          [-104.9600, 39.6080],
+          [-104.9630, 39.6010],
+          [-104.9660, 39.5940],
+          [-104.9700, 39.5870],
+          [-104.9740, 39.5800],
+          [-104.9780, 39.5730],
+          [-104.9810, 39.5660]
+        ]
+      }
+    }
+  ]
+}

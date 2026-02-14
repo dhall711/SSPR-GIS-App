@@ -1,0 +1,3659 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "abbott-park",
+      "properties": {
+        "id": "abbott-park",
+        "mapNumber": 1,
+        "name": "Abbott Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.981,
+          39.5756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "alice-terry-elementary-schoolpark",
+      "properties": {
+        "id": "alice-terry-elementary-schoolpark",
+        "mapNumber": 2,
+        "name": "Alice Terry Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014,
+          39.6394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "altair-park",
+      "properties": {
+        "id": "altair-park",
+        "mapNumber": 3,
+        "name": "Altair Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.933,
+          39.5656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "arapaho-park",
+      "properties": {
+        "id": "arapaho-park",
+        "mapNumber": 4,
+        "name": "Arapaho Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.958,
+          39.5884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ashbaugh-parkpond",
+      "properties": {
+        "id": "ashbaugh-parkpond",
+        "mapNumber": 5,
+        "name": "Ashbaugh Park/Pond",
+        "category": "fishing",
+        "ecologicalClass": "wetland",
+        "gridRef": "F-5",
+        "areaAcres": null,
+        "description": "Fishing and aquatic habitat area."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.009,
+          39.5966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "barnes-park",
+      "properties": {
+        "id": "barnes-park",
+        "mapNumber": 6,
+        "name": "Barnes Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.002,
+          39.6408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bear-creek-trailhead-future-park",
+      "properties": {
+        "id": "bear-creek-trailhead-future-park",
+        "mapNumber": 7,
+        "name": "Bear Creek Trailhead (Future Park)",
+        "category": "trailhead",
+        "ecologicalClass": "riparian",
+        "gridRef": "E-1",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.025,
+          39.644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bebop-park-future-park",
+      "properties": {
+        "id": "bebop-park-future-park",
+        "mapNumber": 8,
+        "name": "BeBop Park (Future Park)",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "M-10",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.884,
+          39.5258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bega-park",
+      "properties": {
+        "id": "bega-park",
+        "mapNumber": 9,
+        "name": "Bega Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.007,
+          39.606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "belvedere-park",
+      "properties": {
+        "id": "belvedere-park",
+        "mapNumber": 10,
+        "name": "Belvedere Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9,
+          39.5428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ben-franklin-pool",
+      "properties": {
+        "id": "ben-franklin-pool",
+        "mapNumber": 11,
+        "name": "Ben Franklin Pool",
+        "category": "pool",
+        "ecologicalClass": "built",
+        "gridRef": "H-4",
+        "areaAcres": null,
+        "description": "Outdoor swimming pool facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.976,
+          39.61
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "berry-park",
+      "properties": {
+        "id": "berry-park",
+        "mapNumber": 12,
+        "name": "Berry Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.009,
+          39.6152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "big-dry-creek-east-trailhead",
+      "properties": {
+        "id": "big-dry-creek-east-trailhead",
+        "mapNumber": 13,
+        "name": "Big Dry Creek East Trailhead",
+        "category": "trailhead",
+        "ecologicalClass": "riparian",
+        "gridRef": "G-3",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995,
+          39.624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bobcat-park",
+      "properties": {
+        "id": "bobcat-park",
+        "mapNumber": 14,
+        "name": "Bobcat Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.021,
+          39.6432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bowles-grove-park",
+      "properties": {
+        "id": "bowles-grove-park",
+        "mapNumber": 15,
+        "name": "Bowles Grove Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014,
+          39.6044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "carbone-park",
+      "properties": {
+        "id": "carbone-park",
+        "mapNumber": 16,
+        "name": "Carbone Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105,
+          39.5982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "carl-sandburg-elementary-schoolpark",
+      "properties": {
+        "id": "carl-sandburg-elementary-schoolpark",
+        "mapNumber": 17,
+        "name": "Carl Sandburg Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-5",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.958,
+          39.5934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "carriage-club-estates-park",
+      "properties": {
+        "id": "carriage-club-estates-park",
+        "mapNumber": 18,
+        "name": "Carriage Club Estates Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.932,
+          39.5316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "carson-nature-center",
+      "properties": {
+        "id": "carson-nature-center",
+        "mapNumber": 19,
+        "name": "Carson Nature Center",
+        "category": "nature_center",
+        "ecologicalClass": "natural_area",
+        "gridRef": "E-6",
+        "areaAcres": null,
+        "description": "Professional ecological education facility within South Platte Park. 300+ wildlife species. NAI-certified staff. Live animal exhibits and interactive River Table."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0139,
+          39.5963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "centennial-ridge-park",
+      "properties": {
+        "id": "centennial-ridge-park",
+        "mapNumber": 20,
+        "name": "Centennial Ridge Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.908,
+          39.5456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "charley-emley-park",
+      "properties": {
+        "id": "charley-emley-park",
+        "mapNumber": 21,
+        "name": "Charley Emley Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.001,
+          39.6014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chase-park",
+      "properties": {
+        "id": "chase-park",
+        "mapNumber": 22,
+        "name": "Chase Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-2",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.007,
+          39.6386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cherry-knolls-park",
+      "properties": {
+        "id": "cherry-knolls-park",
+        "mapNumber": 23,
+        "name": "Cherry Knolls Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.955,
+          39.5918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cherry-park",
+      "properties": {
+        "id": "cherry-park",
+        "mapNumber": 24,
+        "name": "Cherry Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.929,
+          39.6156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cimarron-trail-park",
+      "properties": {
+        "id": "cimarron-trail-park",
+        "mapNumber": 25,
+        "name": "Cimarron Trail Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "D-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.024,
+          39.6208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "clarkson-park",
+      "properties": {
+        "id": "clarkson-park",
+        "mapNumber": 26,
+        "name": "Clarkson Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.975,
+          39.591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "coal-mine-trail",
+      "properties": {
+        "id": "coal-mine-trail",
+        "mapNumber": 27,
+        "name": "Coal Mine Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "D-5",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.036,
+          39.5998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "colorado-journey-miniature-golf",
+      "properties": {
+        "id": "colorado-journey-miniature-golf",
+        "mapNumber": 28,
+        "name": "Colorado Journey Miniature Golf",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Specialty golf facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.004,
+          39.62
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "columbine-manor-park",
+      "properties": {
+        "id": "columbine-manor-park",
+        "mapNumber": 29,
+        "name": "Columbine Manor Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "D-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.035,
+          39.5772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cook-creek-open-space",
+      "properties": {
+        "id": "cook-creek-open-space",
+        "mapNumber": 30,
+        "name": "Cook Creek Open Space",
+        "category": "open_space",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.895,
+          39.545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cook-creek-pool",
+      "properties": {
+        "id": "cook-creek-pool",
+        "mapNumber": 31,
+        "name": "Cook Creek Pool",
+        "category": "pool",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Outdoor swimming pool facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.909,
+          39.5472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cook-creek-tennis-courts",
+      "properties": {
+        "id": "cook-creek-tennis-courts",
+        "mapNumber": 32,
+        "name": "Cook Creek Tennis Courts",
+        "category": "tennis",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Tennis facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.902,
+          39.5624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cornerstone-batting-cages",
+      "properties": {
+        "id": "cornerstone-batting-cages",
+        "mapNumber": 33,
+        "name": "Cornerstone Batting Cages",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.008,
+          39.6232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cornerstone-park",
+      "properties": {
+        "id": "cornerstone-park",
+        "mapNumber": 34,
+        "name": "Cornerstone Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.006,
+          39.62
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "creekside-experience",
+      "properties": {
+        "id": "creekside-experience",
+        "mapNumber": 35,
+        "name": "Creekside Experience",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.007,
+          39.6136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "damon-runyon-elementary-schoolpark",
+      "properties": {
+        "id": "damon-runyon-elementary-schoolpark",
+        "mapNumber": 36,
+        "name": "Damon Runyon Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-5",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.99,
+          39.5974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "david-a-lorenz-regional-park",
+      "properties": {
+        "id": "david-a-lorenz-regional-park",
+        "mapNumber": 37,
+        "name": "David A. Lorenz Regional Park",
+        "category": "fishing",
+        "ecologicalClass": "wetland",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Regional park with BMX track, fishing, botanical garden, and extensive recreational facilities."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.95,
+          39.575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "david-a-lorenz-regional-park-bmx-track",
+      "properties": {
+        "id": "david-a-lorenz-regional-park-bmx-track",
+        "mapNumber": 38,
+        "name": "David A. Lorenz Regional Park BMX Track",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.942,
+          39.5744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dekoevend-park",
+      "properties": {
+        "id": "dekoevend-park",
+        "mapNumber": 39,
+        "name": "deKoevend Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.96,
+          39.6116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dekoevend-tot-lot",
+      "properties": {
+        "id": "dekoevend-tot-lot",
+        "mapNumber": 40,
+        "name": "deKoevend Tot Lot",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.981,
+          39.6068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "douglas-h-buck-recreation-center",
+      "properties": {
+        "id": "douglas-h-buck-recreation-center",
+        "mapNumber": 41,
+        "name": "Douglas H. Buck Recreation Center",
+        "category": "rec_center",
+        "ecologicalClass": "built",
+        "gridRef": "F-4",
+        "areaAcres": null,
+        "description": "Community recreation center in the F-4 grid area of the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.007,
+          39.613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dry-creek-elementary-schoolpark",
+      "properties": {
+        "id": "dry-creek-elementary-schoolpark",
+        "mapNumber": 42,
+        "name": "Dry Creek Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-6",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.91,
+          39.5828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "east-community-centerpark",
+      "properties": {
+        "id": "east-community-centerpark",
+        "mapNumber": 43,
+        "name": "East Community Center/Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.993,
+          39.606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "elati-park",
+      "properties": {
+        "id": "elati-park",
+        "mapNumber": 44,
+        "name": "Elati Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.999,
+          39.6248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "eugene-field-elementary-schoolpark",
+      "properties": {
+        "id": "eugene-field-elementary-schoolpark",
+        "mapNumber": 45,
+        "name": "Eugene Field Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-3",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.972,
+          39.62
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fairways-at-lone-tree",
+      "properties": {
+        "id": "fairways-at-lone-tree",
+        "mapNumber": 46,
+        "name": "Fairways at Lone Tree",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.908,
+          39.5432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "family-sports-center",
+      "properties": {
+        "id": "family-sports-center",
+        "mapNumber": 47,
+        "name": "Family Sports Center",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "N-5",
+        "areaAcres": null,
+        "description": "Major sports complex with golf course, ice arena, dog park, and batting cages."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.877,
+          39.605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "family-sports-center-golf-course",
+      "properties": {
+        "id": "family-sports-center-golf-course",
+        "mapNumber": 48,
+        "name": "Family Sports Center Golf Course",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "N-5",
+        "areaAcres": null,
+        "description": "Golf course facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.879,
+          39.5942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "filmore-tributary",
+      "properties": {
+        "id": "filmore-tributary",
+        "mapNumber": 49,
+        "name": "Filmore Tributary",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.955,
+          39.5894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "footbridge-park",
+      "properties": {
+        "id": "footbridge-park",
+        "mapNumber": 50,
+        "name": "Footbridge Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.006,
+          39.5982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "forest-park-natural-area",
+      "properties": {
+        "id": "forest-park-natural-area",
+        "mapNumber": 51,
+        "name": "Forest Park Natural Area",
+        "category": "natural_area",
+        "ecologicalClass": "natural_area",
+        "gridRef": "I-6",
+        "areaAcres": null,
+        "description": "Natural area with native ecosystems and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.96,
+          39.58
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "foxhill-park",
+      "properties": {
+        "id": "foxhill-park",
+        "mapNumber": 52,
+        "name": "Foxhill Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.948,
+          39.5756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "foxridge-open-space",
+      "properties": {
+        "id": "foxridge-open-space",
+        "mapNumber": 53,
+        "name": "Foxridge Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.934,
+          39.5844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "foxridge-orchard",
+      "properties": {
+        "id": "foxridge-orchard",
+        "mapNumber": 54,
+        "name": "Foxridge Orchard",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.927,
+          39.5796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "foxridge-park",
+      "properties": {
+        "id": "foxridge-park",
+        "mapNumber": 55,
+        "name": "Foxridge Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.933,
+          39.5884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "foxridge-west-open-spacetrails",
+      "properties": {
+        "id": "foxridge-west-open-spacetrails",
+        "mapNumber": 56,
+        "name": "Foxridge West Open Space/Trails",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.926,
+          39.5836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gallup-gardens",
+      "properties": {
+        "id": "gallup-gardens",
+        "mapNumber": 57,
+        "name": "Gallup Gardens",
+        "category": "garden",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-4",
+        "areaAcres": null,
+        "description": "Botanical or display garden with ornamental and potentially native plantings."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.998,
+          39.609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gallup-park",
+      "properties": {
+        "id": "gallup-park",
+        "mapNumber": 58,
+        "name": "Gallup Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.002,
+          39.6156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "goodson-recreation-center",
+      "properties": {
+        "id": "goodson-recreation-center",
+        "mapNumber": 59,
+        "name": "Goodson Recreation Center",
+        "category": "rec_center",
+        "ecologicalClass": "built",
+        "gridRef": "H-4",
+        "areaAcres": null,
+        "description": "Community recreation center in the H-4 grid area of the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.973,
+          39.61
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "grandpas-acres",
+      "properties": {
+        "id": "grandpas-acres",
+        "mapNumber": 60,
+        "name": "Grandpa's Acres",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.991,
+          39.591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hamlet-park",
+      "properties": {
+        "id": "hamlet-park",
+        "mapNumber": 61,
+        "name": "Hamlet Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "D-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.032,
+          39.6148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "harlow-park",
+      "properties": {
+        "id": "harlow-park",
+        "mapNumber": 62,
+        "name": "Harlow Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.01,
+          39.62
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "harlow-pool",
+      "properties": {
+        "id": "harlow-pool",
+        "mapNumber": 63,
+        "name": "Harlow Pool",
+        "category": "pool",
+        "ecologicalClass": "built",
+        "gridRef": "E-3",
+        "areaAcres": null,
+        "description": "Outdoor swimming pool facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.016,
+          39.6152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "harmony-park",
+      "properties": {
+        "id": "harmony-park",
+        "mapNumber": 64,
+        "name": "Harmony Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.009,
+          39.648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "heritage-hills-trail",
+      "properties": {
+        "id": "heritage-hills-trail",
+        "mapNumber": 65,
+        "name": "Heritage Hills Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.905,
+          39.565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "heritage-village-park",
+      "properties": {
+        "id": "heritage-village-park",
+        "mapNumber": 66,
+        "name": "Heritage Village Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.954,
+          39.6044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "high-note-regional-park-future-park",
+      "properties": {
+        "id": "high-note-regional-park-future-park",
+        "mapNumber": 67,
+        "name": "High Note Regional Park (Future Park)",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "N-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.876,
+          39.5412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "highlands-460-greenbelt",
+      "properties": {
+        "id": "highlands-460-greenbelt",
+        "mapNumber": 68,
+        "name": "Highlands 460 Greenbelt",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "I-6",
+        "areaAcres": null,
+        "description": "Linear green corridor providing wildlife movement habitat and recreational access."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.965,
+          39.5804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hogback-hill-park",
+      "properties": {
+        "id": "hogback-hill-park",
+        "mapNumber": 69,
+        "name": "Hogback Hill Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "B-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.058,
+          39.5416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "holly-park",
+      "properties": {
+        "id": "holly-park",
+        "mapNumber": 70,
+        "name": "Holly Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.928,
+          39.593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "holly-pool",
+      "properties": {
+        "id": "holly-pool",
+        "mapNumber": 71,
+        "name": "Holly Pool",
+        "category": "pool",
+        "ecologicalClass": "built",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Outdoor swimming pool facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.925,
+          39.5926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "holly-tennis-center",
+      "properties": {
+        "id": "holly-tennis-center",
+        "mapNumber": 72,
+        "name": "Holly Tennis Center",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Tennis facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.931,
+          39.6014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "homestead-elementary-schoolpark",
+      "properties": {
+        "id": "homestead-elementary-schoolpark",
+        "mapNumber": 73,
+        "name": "Homestead Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.924,
+          39.5836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "horseshoe-park",
+      "properties": {
+        "id": "horseshoe-park",
+        "mapNumber": 74,
+        "name": "Horseshoe Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.997,
+          39.5788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hudson-gardens",
+      "properties": {
+        "id": "hudson-gardens",
+        "mapNumber": 75,
+        "name": "Hudson Gardens",
+        "category": "garden",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-4",
+        "areaAcres": 30,
+        "description": "30-acre botanical garden along the South Platte River with native plant displays, wetland gardens, and concert venue."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0148,
+          39.6133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hunters-hill-park",
+      "properties": {
+        "id": "hunters-hill-park",
+        "mapNumber": 76,
+        "name": "Hunters Hill Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.906,
+          39.5958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ida-park",
+      "properties": {
+        "id": "ida-park",
+        "mapNumber": 77,
+        "name": "Ida Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.989,
+          39.606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ivan-thomas-greenway",
+      "properties": {
+        "id": "ivan-thomas-greenway",
+        "mapNumber": 78,
+        "name": "Ivan Thomas Greenway",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "H-6",
+        "areaAcres": null,
+        "description": "Linear green corridor providing wildlife movement habitat and recreational access."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.975,
+          39.5868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jackass-hill-park",
+      "properties": {
+        "id": "jackass-hill-park",
+        "mapNumber": 79,
+        "name": "Jackass Hill Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.008,
+          39.581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "james-a-taylor-park",
+      "properties": {
+        "id": "james-a-taylor-park",
+        "mapNumber": 80,
+        "name": "James A. Taylor Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014,
+          39.6152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ketring-park",
+      "properties": {
+        "id": "ketring-park",
+        "mapNumber": 81,
+        "name": "Ketring Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.996,
+          39.608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kimmer-plaza",
+      "properties": {
+        "id": "kimmer-plaza",
+        "mapNumber": 82,
+        "name": "Kimmer Plaza",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "M-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.886,
+          39.5672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kline-homestead-park",
+      "properties": {
+        "id": "kline-homestead-park",
+        "mapNumber": 83,
+        "name": "Kline Homestead Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.952,
+          39.5624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "laquinta-park",
+      "properties": {
+        "id": "laquinta-park",
+        "mapNumber": 84,
+        "name": "LaQuinta Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.925,
+          39.5512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "laura-ingalls-wilder-elem-schoolpark",
+      "properties": {
+        "id": "laura-ingalls-wilder-elem-schoolpark",
+        "mapNumber": 85,
+        "name": "Laura Ingalls Wilder Elem. School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-4",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.018,
+          39.6084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lee-gulch-overlook",
+      "properties": {
+        "id": "lee-gulch-overlook",
+        "mapNumber": 86,
+        "name": "Lee Gulch Overlook",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "E-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.005,
+          39.588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lincoln-commons",
+      "properties": {
+        "id": "lincoln-commons",
+        "mapNumber": 87,
+        "name": "Lincoln Commons",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "M-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.89,
+          39.5504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "linksview-park",
+      "properties": {
+        "id": "linksview-park",
+        "mapNumber": 88,
+        "name": "Linksview Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943,
+          39.5796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "little-dry-creek-greenbelt",
+      "properties": {
+        "id": "little-dry-creek-greenbelt",
+        "mapNumber": 89,
+        "name": "Little Dry Creek Greenbelt",
+        "category": "open_space",
+        "ecologicalClass": "riparian",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Linear green corridor providing wildlife movement habitat and recreational access."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.929,
+          39.6014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "little-dry-creek-park",
+      "properties": {
+        "id": "little-dry-creek-park",
+        "mapNumber": 90,
+        "name": "Little Dry Creek Park",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "J-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.942,
+          39.6116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "littles-creek-park",
+      "properties": {
+        "id": "littles-creek-park",
+        "mapNumber": 91,
+        "name": "Little's Creek Park",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "G-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995,
+          39.5918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "littleton-golf-and-tennis-club",
+      "properties": {
+        "id": "littleton-golf-and-tennis-club",
+        "mapNumber": 92,
+        "name": "Littleton Golf and Tennis Club",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "E-4",
+        "areaAcres": null,
+        "description": "Golf course facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.021,
+          39.6156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lone-tree-golf-course-and-hotel",
+      "properties": {
+        "id": "lone-tree-golf-course-and-hotel",
+        "mapNumber": 93,
+        "name": "Lone Tree Golf Course and Hotel",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Golf course facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.904,
+          39.5488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "the-lone-tree-hub",
+      "properties": {
+        "id": "the-lone-tree-hub",
+        "mapNumber": 94,
+        "name": "The Lone Tree Hub",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.91,
+          39.544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lone-tree-recreation-center",
+      "properties": {
+        "id": "lone-tree-recreation-center",
+        "mapNumber": 95,
+        "name": "Lone Tree Recreation Center",
+        "category": "rec_center",
+        "ecologicalClass": "built",
+        "gridRef": "M-9",
+        "areaAcres": null,
+        "description": "Community recreation center in the M-9 grid area of the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.887,
+          39.542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lonesome-pine-park",
+      "properties": {
+        "id": "lonesome-pine-park",
+        "mapNumber": 96,
+        "name": "Lonesome Pine Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.909,
+          39.568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lyric-park-future-park",
+      "properties": {
+        "id": "lyric-park-future-park",
+        "mapNumber": 97,
+        "name": "Lyric Park (Future Park)",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "N-10",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.874,
+          39.5202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mark-hopkins-elementary-schoolpark",
+      "properties": {
+        "id": "mark-hopkins-elementary-schoolpark",
+        "mapNumber": 98,
+        "name": "Mark Hopkins Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-5",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.978,
+          39.599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mark-twain-elementary-schoolpark",
+      "properties": {
+        "id": "mark-twain-elementary-schoolpark",
+        "mapNumber": 99,
+        "name": "Mark Twain Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-5",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.971,
+          39.5942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "maximus-trail-park",
+      "properties": {
+        "id": "maximus-trail-park",
+        "mapNumber": 100,
+        "name": "Maximus Trail Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.907,
+          39.5624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "medema-park",
+      "properties": {
+        "id": "medema-park",
+        "mapNumber": 101,
+        "name": "Medema Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943,
+          39.5982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "milliken-park",
+      "properties": {
+        "id": "milliken-park",
+        "mapNumber": 102,
+        "name": "Milliken Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.976,
+          39.6084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mission-viejo-open-space",
+      "properties": {
+        "id": "mission-viejo-open-space",
+        "mapNumber": 103,
+        "name": "Mission Viejo Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "G-7",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.989,
+          39.5616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "monterey-open-space",
+      "properties": {
+        "id": "monterey-open-space",
+        "mapNumber": 104,
+        "name": "Monterey Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "I-6",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.96,
+          39.5844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nesbitt-park",
+      "properties": {
+        "id": "nesbitt-park",
+        "mapNumber": 105,
+        "name": "Nesbitt Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.021,
+          39.6346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ohlson-acres",
+      "properties": {
+        "id": "ohlson-acres",
+        "mapNumber": 106,
+        "name": "Ohlson Acres",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.004,
+          39.5744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "orchard-road-trail",
+      "properties": {
+        "id": "orchard-road-trail",
+        "mapNumber": 107,
+        "name": "Orchard Road Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "H-4",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.98,
+          39.6116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "otero-tennis-courts",
+      "properties": {
+        "id": "otero-tennis-courts",
+        "mapNumber": 108,
+        "name": "Otero Tennis Courts",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Tennis facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.926,
+          39.5788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "oxbow-point",
+      "properties": {
+        "id": "oxbow-point",
+        "mapNumber": 109,
+        "name": "Oxbow Point",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.009,
+          39.6256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "oxford-trailhead",
+      "properties": {
+        "id": "oxford-trailhead",
+        "mapNumber": 110,
+        "name": "Oxford Trailhead",
+        "category": "trailhead",
+        "ecologicalClass": "natural_area",
+        "gridRef": "F-2",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.002,
+          39.6378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "palos-verdes-park",
+      "properties": {
+        "id": "palos-verdes-park",
+        "mapNumber": 111,
+        "name": "Palos Verdes Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.931,
+          39.606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "palos-verdes-tot-lot",
+      "properties": {
+        "id": "palos-verdes-tot-lot",
+        "mapNumber": 112,
+        "name": "Palos Verdes Tot Lot",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.944,
+          39.6148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "park-at-lone-tree-elementary-school",
+      "properties": {
+        "id": "park-at-lone-tree-elementary-school",
+        "mapNumber": 113,
+        "name": "Park at Lone Tree Elementary School",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.907,
+          39.548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "peabody-elementary-schoolpark",
+      "properties": {
+        "id": "peabody-elementary-schoolpark",
+        "mapNumber": 114,
+        "name": "Peabody Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "I-4",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.955,
+          39.6052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "persinger-park",
+      "properties": {
+        "id": "persinger-park",
+        "mapNumber": 115,
+        "name": "Persinger Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.006,
+          39.648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poets-park-future-park",
+      "properties": {
+        "id": "poets-park-future-park",
+        "mapNumber": 116,
+        "name": "Poets Park (Future Park)",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "N-10",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.871,
+          39.5242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "powers-park",
+      "properties": {
+        "id": "powers-park",
+        "mapNumber": 117,
+        "name": "Powers Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.995,
+          39.6144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "prairie-sky-park",
+      "properties": {
+        "id": "prairie-sky-park",
+        "mapNumber": 118,
+        "name": "Prairie Sky Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.911,
+          39.5412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "progress-park",
+      "properties": {
+        "id": "progress-park",
+        "mapNumber": 119,
+        "name": "Progress Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.994,
+          39.6184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "promenade-park",
+      "properties": {
+        "id": "promenade-park",
+        "mapNumber": 120,
+        "name": "Promenade Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "M-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.893,
+          39.5316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "prominence-point-open-space",
+      "properties": {
+        "id": "prominence-point-open-space",
+        "mapNumber": 121,
+        "name": "Prominence Point Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-7",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.926,
+          39.5704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "promise-park",
+      "properties": {
+        "id": "promise-park",
+        "mapNumber": 122,
+        "name": "Promise Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "G-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.999,
+          39.6076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "province-center-open-space",
+      "properties": {
+        "id": "province-center-open-space",
+        "mapNumber": 123,
+        "name": "Province Center Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.945,
+          39.5744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "province-center-park",
+      "properties": {
+        "id": "province-center-park",
+        "mapNumber": 124,
+        "name": "Province Center Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.951,
+          39.5696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "puma-park",
+      "properties": {
+        "id": "puma-park",
+        "mapNumber": 125,
+        "name": "Puma Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "H-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.971,
+          39.5788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "quebec-street-greenbelt",
+      "properties": {
+        "id": "quebec-street-greenbelt",
+        "mapNumber": 126,
+        "name": "Quebec Street Greenbelt",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Linear green corridor providing wildlife movement habitat and recreational access."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.93,
+          39.5876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rattlesnake-trail",
+      "properties": {
+        "id": "rattlesnake-trail",
+        "mapNumber": 127,
+        "name": "Rattlesnake Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-8",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.923,
+          39.5488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "reynolds-landing",
+      "properties": {
+        "id": "reynolds-landing",
+        "mapNumber": 128,
+        "name": "Reynolds Landing",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.016,
+          39.591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ridgegate-open-space",
+      "properties": {
+        "id": "ridgegate-open-space",
+        "mapNumber": 129,
+        "name": "Ridgegate Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "M-9",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.885,
+          39.538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ridgeview-park",
+      "properties": {
+        "id": "ridgeview-park",
+        "mapNumber": 130,
+        "name": "Ridgeview Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.005,
+          39.595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ridgewood-park",
+      "properties": {
+        "id": "ridgewood-park",
+        "mapNumber": 131,
+        "name": "Ridgewood Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.011,
+          39.5902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rusty-sun-tennis-courts",
+      "properties": {
+        "id": "rusty-sun-tennis-courts",
+        "mapNumber": 132,
+        "name": "Rusty Sun Tennis Courts",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "K-6",
+        "areaAcres": null,
+        "description": "Tennis facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.927,
+          39.586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sheridan-community-park",
+      "properties": {
+        "id": "sheridan-community-park",
+        "mapNumber": 133,
+        "name": "Sheridan Community Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.02,
+          39.6362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sheridan-community-trail",
+      "properties": {
+        "id": "sheridan-community-trail",
+        "mapNumber": 134,
+        "name": "Sheridan Community Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.013,
+          39.6314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sheridan-recreation-center",
+      "properties": {
+        "id": "sheridan-recreation-center",
+        "mapNumber": 135,
+        "name": "Sheridan Recreation Center",
+        "category": "rec_center",
+        "ecologicalClass": "built",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Community recreation center in the E-2 grid area of the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.02,
+          39.637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sheridan-square-park",
+      "properties": {
+        "id": "sheridan-square-park",
+        "mapNumber": 136,
+        "name": "Sheridan Square Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.012,
+          39.6424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "slaughterhouse-gulch-park",
+      "properties": {
+        "id": "slaughterhouse-gulch-park",
+        "mapNumber": 137,
+        "name": "Slaughterhouse Gulch Park",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.008,
+          39.6136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "south-platte-park",
+      "properties": {
+        "id": "south-platte-park",
+        "mapNumber": 138,
+        "name": "South Platte Park",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "E-6",
+        "areaAcres": 880,
+        "description": "880-acre natural open space along the South Platte River. Only unchannelized section of the river in metro Denver. 300+ wildlife species, 5 fishable lakes."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.014,
+          39.594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "south-platte-reservoir",
+      "properties": {
+        "id": "south-platte-reservoir",
+        "mapNumber": 139,
+        "name": "South Platte Reservoir",
+        "category": "fishing",
+        "ecologicalClass": "wetland",
+        "gridRef": "D-6",
+        "areaAcres": null,
+        "description": "Fishing and aquatic habitat area."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.025,
+          39.58
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "south-suburban-golf-course",
+      "properties": {
+        "id": "south-suburban-golf-course",
+        "mapNumber": 140,
+        "name": "South Suburban Golf Course",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "J-6",
+        "areaAcres": null,
+        "description": "Golf course facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.943,
+          39.5884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "south-suburban-service-center",
+      "properties": {
+        "id": "south-suburban-service-center",
+        "mapNumber": 141,
+        "name": "South Suburban Service Center",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.949,
+          39.5696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "south-suburban-sports-complex",
+      "properties": {
+        "id": "south-suburban-sports-complex",
+        "mapNumber": 142,
+        "name": "South Suburban Sports Complex",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "J-7",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.942,
+          39.5648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "southbridge-park",
+      "properties": {
+        "id": "southbridge-park",
+        "mapNumber": 143,
+        "name": "Southbridge Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.005,
+          39.5876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "southpark-pickleball-complex",
+      "properties": {
+        "id": "southpark-pickleball-complex",
+        "mapNumber": 144,
+        "name": "Southpark Pickleball Complex",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "G-7",
+        "areaAcres": null,
+        "description": "Dedicated pickleball facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.001,
+          39.5688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sports-dome",
+      "properties": {
+        "id": "sports-dome",
+        "mapNumber": 145,
+        "name": "Sports Dome",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "N-5",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.876,
+          39.591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ssia-pickleball-courts",
+      "properties": {
+        "id": "ssia-pickleball-courts",
+        "mapNumber": 146,
+        "name": "SSIA Pickleball Courts",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "H-5",
+        "areaAcres": null,
+        "description": "Dedicated pickleball facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.98,
+          39.5998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sterne-park",
+      "properties": {
+        "id": "sterne-park",
+        "mapNumber": 147,
+        "name": "Sterne Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.01,
+          39.611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sunset-park",
+      "properties": {
+        "id": "sunset-park",
+        "mapNumber": 148,
+        "name": "Sunset Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-4",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.932,
+          39.6052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sweetwater-park",
+      "properties": {
+        "id": "sweetwater-park",
+        "mapNumber": 149,
+        "name": "Sweetwater Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.902,
+          39.572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sweetwater-trail",
+      "properties": {
+        "id": "sweetwater-trail",
+        "mapNumber": 150,
+        "name": "Sweetwater Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.908,
+          39.5672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "taos-open-space",
+      "properties": {
+        "id": "taos-open-space",
+        "mapNumber": 151,
+        "name": "Taos Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.901,
+          39.5424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tennis-center-and-park-at-lone-tree-golf-course",
+      "properties": {
+        "id": "tennis-center-and-park-at-lone-tree-golf-course",
+        "mapNumber": 152,
+        "name": "Tennis Center and Park at Lone Tree Golf Course",
+        "category": "tennis",
+        "ecologicalClass": "built",
+        "gridRef": "L-8",
+        "areaAcres": null,
+        "description": "Tennis facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.907,
+          39.5512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "terra-ridge-trails",
+      "properties": {
+        "id": "terra-ridge-trails",
+        "mapNumber": 153,
+        "name": "Terra Ridge Trails",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-8",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.923,
+          39.5464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trailmark-open-space",
+      "properties": {
+        "id": "trailmark-open-space",
+        "mapNumber": 154,
+        "name": "TrailMark Open Space",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "A-8",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.076,
+          39.5416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trailmark-park",
+      "properties": {
+        "id": "trailmark-park",
+        "mapNumber": 155,
+        "name": "TrailMark Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "B-8",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.054,
+          39.5504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "university-trail",
+      "properties": {
+        "id": "university-trail",
+        "mapNumber": 156,
+        "name": "University Trail",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "I-4",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.96,
+          39.6076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "veterans-park",
+      "properties": {
+        "id": "veterans-park",
+        "mapNumber": 157,
+        "name": "Veteran's Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-2",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.021,
+          39.6434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "walnut-hills-elementary-schoolpark",
+      "properties": {
+        "id": "walnut-hills-elementary-schoolpark",
+        "mapNumber": 158,
+        "name": "Walnut Hills Elementary School/Park",
+        "category": "school_park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-5",
+        "areaAcres": null,
+        "description": "Joint-use school and park facility providing community green space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.904,
+          39.5966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "walnut-hills-park",
+      "properties": {
+        "id": "walnut-hills-park",
+        "mapNumber": 159,
+        "name": "Walnut Hills Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "L-5",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.91,
+          39.5918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-memorial-rose-garden",
+      "properties": {
+        "id": "war-memorial-rose-garden",
+        "mapNumber": 160,
+        "name": "War Memorial Rose Garden",
+        "category": "garden",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-4",
+        "areaAcres": null,
+        "description": "Botanical or display garden with ornamental and potentially native plantings."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.009,
+          39.612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "watson-lake",
+      "properties": {
+        "id": "watson-lake",
+        "mapNumber": 161,
+        "name": "Watson Lake",
+        "category": "fishing",
+        "ecologicalClass": "wetland",
+        "gridRef": "E-4",
+        "areaAcres": null,
+        "description": "Fishing and aquatic habitat area."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.019,
+          39.6108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "west-belleview-trailhead",
+      "properties": {
+        "id": "west-belleview-trailhead",
+        "mapNumber": 162,
+        "name": "West Belleview Trailhead",
+        "category": "trailhead",
+        "ecologicalClass": "natural_area",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.002,
+          39.616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "west-fork-disc-golf-course",
+      "properties": {
+        "id": "west-fork-disc-golf-course",
+        "mapNumber": 163,
+        "name": "West Fork Disc Golf Course",
+        "category": "golf",
+        "ecologicalClass": "built",
+        "gridRef": "G-7",
+        "areaAcres": null,
+        "description": "Specialty golf facility in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.998,
+          39.5728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wildcat-park",
+      "properties": {
+        "id": "wildcat-park",
+        "mapNumber": 164,
+        "name": "Wildcat Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "E-1",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.011,
+          39.644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wildcat-ridge-park",
+      "properties": {
+        "id": "wildcat-ridge-park",
+        "mapNumber": 165,
+        "name": "Wildcat Ridge Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "K-9",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.93,
+          39.5332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wildcat-ridge-trails",
+      "properties": {
+        "id": "wildcat-ridge-trails",
+        "mapNumber": 166,
+        "name": "Wildcat Ridge Trails",
+        "category": "open_space",
+        "ecologicalClass": "natural_area",
+        "gridRef": "K-9",
+        "areaAcres": null,
+        "description": "Trail corridor through natural open space."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.923,
+          39.542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "willow-creek-greenbelt",
+      "properties": {
+        "id": "willow-creek-greenbelt",
+        "mapNumber": 167,
+        "name": "Willow Creek Greenbelt",
+        "category": "open_space",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-7",
+        "areaAcres": null,
+        "description": "Linear green corridor providing wildlife movement habitat and recreational access."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.906,
+          39.5672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "willow-creek-park",
+      "properties": {
+        "id": "willow-creek-park",
+        "mapNumber": 168,
+        "name": "Willow Creek Park",
+        "category": "park",
+        "ecologicalClass": "riparian",
+        "gridRef": "L-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.899,
+          39.5764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "willow-spring-open-space",
+      "properties": {
+        "id": "willow-spring-open-space",
+        "mapNumber": 169,
+        "name": "Willow Spring Open Space",
+        "category": "open_space",
+        "ecologicalClass": "riparian",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Natural open space with native vegetation and wildlife habitat."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.925,
+          39.59
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "willow-spring-service-center",
+      "properties": {
+        "id": "willow-spring-service-center",
+        "mapNumber": 170,
+        "name": "Willow Spring Service Center",
+        "category": "sports_complex",
+        "ecologicalClass": "built",
+        "gridRef": "K-5",
+        "areaAcres": null,
+        "description": "Sports and recreation complex."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.934,
+          39.5934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "writers-vista-park",
+      "properties": {
+        "id": "writers-vista-park",
+        "mapNumber": 171,
+        "name": "Writers Vista Park",
+        "category": "park",
+        "ecologicalClass": "urban_green",
+        "gridRef": "F-6",
+        "areaAcres": null,
+        "description": "Community park in the SSPR district."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.004,
+          39.5756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "writers-vista-trailhead",
+      "properties": {
+        "id": "writers-vista-trailhead",
+        "mapNumber": 172,
+        "name": "Writers Vista Trailhead",
+        "category": "trailhead",
+        "ecologicalClass": "natural_area",
+        "gridRef": "F-6",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.01,
+          39.5844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wyandot-trailhead",
+      "properties": {
+        "id": "wyandot-trailhead",
+        "mapNumber": 173,
+        "name": "Wyandot Trailhead",
+        "category": "trailhead",
+        "ecologicalClass": "natural_area",
+        "gridRef": "F-3",
+        "areaAcres": null,
+        "description": "Trailhead providing access to the SSPR trail network."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.003,
+          39.6176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wynetka-ponds",
+      "properties": {
+        "id": "wynetka-ponds",
+        "mapNumber": 174,
+        "name": "Wynetka Ponds",
+        "category": "fishing",
+        "ecologicalClass": "wetland",
+        "gridRef": "E-4",
+        "areaAcres": null,
+        "description": "Fishing ponds with wetland habitat. Important for waterfowl and amphibians."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.008,
+          39.607
+        ]
+      }
+    }
+  ]
+}

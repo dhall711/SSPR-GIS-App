@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-trail-green: #2d6a4f;
+  --color-trail-green-dark: #1b4332;
+  --color-trail-green-light: #40916c;
+  --color-trail-gold: #d4a373;
+  --color-trail-earth: #6b4226;
+  --color-trail-water: #219ebc;
+  --color-eco-riparian: #52b788;
+  --color-eco-riparian-light: #95d5b2;
+  --color-severity-low: #4ade80;
+  --color-severity-medium: #facc15;
+  --color-severity-high: #fb923c;
+  --color-severity-critical: #ef4444;
+  --color-sidebar-bg: #1b2a1f;
+  --color-sidebar-border: rgba(255, 255, 255, 0.1);
+  --color-panel-bg: #f8faf8;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0f1a12;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent iOS bounce/overscroll */
+html, body {
+  overscroll-behavior: none;
+}
+
+/* Safe area insets for mobile notch/home indicator */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Mobile-friendly: prevent text selection on interactive elements */
+button, [role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Ensure minimum touch target size for field use with gloves */
+@media (max-width: 768px) {
+  button, a, [role="button"], input[type="checkbox"], label {
+    min-height: 44px;
+  }
+
+  /* Mobile: offset map controls above bottom nav */
+  .leaflet-bottom {
+    bottom: 70px !important;
+  }
+
+  /* Mobile: adjust coordinate display */
+  .leaflet-bottom.leaflet-left {
+    bottom: 76px !important;
+  }
+}
+
+/* Leaflet container must have explicit height */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Custom scrollbar for sidebar */
+.lesson-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lesson-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lesson-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(45, 106, 79, 0.4);
+  border-radius: 3px;
+}
+
+.lesson-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 106, 79, 0.6);
+}
+
+/* Trail label styling */
+.trail-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #1b4332 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(255, 255, 255, 0.9), 0 0 4px rgba(255, 255, 255, 0.8) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+.trail-label::before {
+  display: none !important;
+}
+
+/* Map popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px !important;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Dark select dropdowns for mobile maintenance UI */
+select option {
+  background: #1b2a1f;
+  color: #ededed;
+}

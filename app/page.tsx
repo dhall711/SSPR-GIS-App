@@ -10,7 +10,7 @@ import { IssueDetail } from "@/components/Maintenance/IssueDetail";
 import { StatsPanel, StatsFilter } from "@/components/Maintenance/StatsPanel";
 import { MobileNav } from "@/components/MobileNav";
 import { FieldTipBanner, useFieldTips } from "@/components/FieldTip";
-import { DEFAULT_LAYER_VISIBILITY } from "@/lib/mapConfig";
+import { DEFAULT_LAYER_VISIBILITY, SSPR_CENTER, SSPR_DEFAULT_ZOOM } from "@/lib/mapConfig";
 import { LayerVisibility, OverlayLayerId, MobileTab, MaintenanceIssue, IssueStatus, LessonProgress } from "@/lib/types";
 
 import _maintenanceData from "@/data/seed/maintenance-issues.json";
@@ -390,7 +390,7 @@ export default function HomePage() {
       {/* ======= Main Content ======= */}
       <main className="relative flex-1 flex flex-col">
         {/* Header Bar */}
-        <header className="flex items-center justify-between bg-trail-green-dark px-3 py-2 z-10">
+        <header className="flex items-center justify-between bg-trail-green-dark px-3 py-2 z-10 safe-area-top">
           <div className="flex items-center gap-3">
             {!isLessonPanelOpen && (
               <button
@@ -443,6 +443,30 @@ export default function HomePage() {
                 </button>
               </div>
             )}
+            {/* Home Button -- resets to default map view */}
+            <button
+              onClick={() => {
+                setMobileTab("map");
+                setSelectedFeature(null);
+                setSelectedIssue(null);
+                setCurrentLesson(null);
+                setDesktopRightPanel("none");
+                setIsChatOpen(false);
+                setDrilldownFilter(null);
+                setFlyToTarget({
+                  lat: SSPR_CENTER[0],
+                  lng: SSPR_CENTER[1],
+                  zoom: SSPR_DEFAULT_ZOOM,
+                });
+              }}
+              className="flex items-center justify-center rounded-lg p-2 text-white/70 hover:text-white hover:bg-white/10 transition-colors min-h-[36px] min-w-[36px]"
+              aria-label="Home - return to default view"
+              title="Home"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </button>
             {/* Desktop Tasks Panel Toggle */}
             <button
               onClick={() => {

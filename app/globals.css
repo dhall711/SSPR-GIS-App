@@ -40,7 +40,11 @@ html, body {
   overscroll-behavior: none;
 }
 
-/* Safe area insets for mobile notch/home indicator */
+/* Safe area insets for mobile notch/status bar/home indicator */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
